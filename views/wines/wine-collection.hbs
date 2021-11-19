@@ -1,0 +1,75 @@
+<h1>Here are listed your wine collection on your profile</h1>
+
+<form action="/profile" method="POST">
+  <label for="wine">ADD YOUR WINE:</label>
+
+  <div class="mb-3">
+    <label class="form-label">Your image:</label>
+    <input
+      class="form-control"
+      placeholder="A picture of your wine"
+      type="text"
+      name="image"
+    />
+    <br />
+    <label class="form-label">Name of wine:</label>
+    <input class="form-control" placeholder="Name" type="text" name="name" />
+    <br />
+    <label class="form-label">Sweetness:</label>
+    <select name="sweetness" id="sweetness">
+
+      <option value="Dry">Dry</option>
+      <option value="Half dry">Half dry</option>
+      <option value="Medium sweet">Medium sweet</option>
+      <option value="Sweet">Sweet</option>
+
+    </select>
+
+    <br />
+    <label class="form-label">Price:</label>
+    <input
+      class="form-control"
+      placeholder="How much was it?"
+      type="text"
+      name="price"
+    />
+    <br />
+    <label class="form-label">Match:</label>
+    <input
+      class="form-control"
+      placeholder="Matches to..."
+      type="text"
+      name="matches"
+    />
+    <br />
+    <label class="form-label">Comments:</label>
+    <input
+      class="form-control"
+      placeholder="Where you bought it ...?"
+      type="text"
+      name="comments"
+    />
+    <br />
+
+  </div>
+  <button class="btn btn-primary" type="submit">ADD</button>
+</form>
+
+// Listed wine collection
+
+<h4>WINECARD HERE</h4>
+{{#each wineCollection}}
+  <img src="{{this.image}}" />
+  <p>Name: {{this.name}}</p>
+  <p>Sweetness: {{this.sweetness}}</p>
+  <p>Price: {{this.price}}</p>
+  <p>Matches to: {{this.matches}}</p>
+  <p>Comments: {{this.comments}}</p>
+  <form action="/profile/{{this._id}}/edit" method="GET">
+    <button type="submit" class="btn btn-warning">Edit</button>
+  </form>
+  <form action="/profile/{{this._id}}/delete" method="GET">
+    <button class="btn btn-danger">Delete</button>
+  </form>
+
+{{/each}}
