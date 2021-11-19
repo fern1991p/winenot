@@ -57,7 +57,7 @@ router.post("/signin", (req,res,next) => {
             
             if (DoesitMatch){
                 req.session.myProperty = userObj
-                res.redirect('/')
+                res.redirect('/profiles')
                 //needs to change it!
                 
             }
