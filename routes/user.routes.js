@@ -94,7 +94,7 @@ const checkLogIn = (req, res, next) =>{
 
 router.get('/profile', checkLogIn, (req,res,next)=>{
     let myUserInfo = req.session.myProperty  
-    res.render('auth/profile.hbs')
+    res.render('auth/profile.hbs', {name: myUserInfo.name})
 })
 
 
