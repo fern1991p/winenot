@@ -15,9 +15,9 @@ router.get("/signup", (req,res,next)=>{
 
 //get data!
 router.post('/signup', (req, res, next) => {
-    const {image, username, password} = req.body
+    const {name, email, password} = req.body
 
-    if (image == '' || username == '' || password == '') {
+    if (name == '' || email == '' || password == '') {
         res.render('auth/signup.hbs', {error: 'Please enter all fields'})
         return;
     }
@@ -29,10 +29,10 @@ router.post('/signup', (req, res, next) => {
     console.log("hash:", hash)
 
 //create the data in my mongoose. Check? Done. 
-    UserModel.create({image, username, password:hash})
+    UserModel.create({name, email, password:hash})
       .then(() => {
-          res.redirect('/')
-          console.log(image, username, password)
+          res.redirect('/signin')
+          console.log(name, email, password)
       })
       .catch((err) => {
         next(err)
@@ -45,19 +45,19 @@ router.post('/signup', (req, res, next) => {
 //sign in and redirect to HD
 // VALIDADE
 router.post("/signin", (req,res,next) => {
-    const {username, password} = req.body
+    const {email, password} = req.body
     
     ///.FIND IS A ARRAY
-    UserModel.find({username})
-    .then((usernameResponse)=> {
-            if (usernameResponse.length){
-            let userObj = usernameResponse[0]
+    UserModel.find({email})
+    .then((emailResponse)=> {
+            if (emailResponse.length){
+            let userObj = emailResponse[0]
             // its an array
             let DoesitMatch = bcrypt.compareSync(password, userObj.password);
             
             if (DoesitMatch){
                 req.session.myProperty = userObj
-                res.redirect('/profiles')
+                res.redirect('/profile')
                 //needs to change it!
                 
             }
@@ -92,9 +92,17 @@ const checkLogIn = (req, res, next) =>{
 
 //private handlebars... to be created
 
-router.get('/profiles', checkLogIn, (req,res,next)=>{
+router.get('/profile', checkLogIn, (req,res,next)=>{
     let myUserInfo = req.session.myProperty  
-    res.render('auth/profiles.hbs', {name: myUserInfo.username})
+    res.render('auth/profile.hbs')
+})
+
+
+router.get('/logout', (req, res, next) => {
+    // Deletes the session
+    // this will also automatically delete the session from the DB
+    req.session.destroy()
+    res.redirect('/')
 })
 
 module.exports = router;
