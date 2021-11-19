@@ -1,3 +1,12 @@
+<h1>
+
+  {{{name.name}}}'s collection
+</h1>
+
+<form action="\\\\\logout">
+  <input type="submit" value="Log Out" />
+</form>
+
 <h1>Here are listed your wine collection on your profile</h1>
 
 <form action="/profile" method="POST">
@@ -42,12 +51,12 @@
       name="matches"
     />
     <br />
-    <label class="form-label">Comments:</label>
+    <label class="form-label">Comment:</label>
     <input
       class="form-control"
       placeholder="Where you bought it ...?"
       type="text"
-      name="comments"
+      name="comment"
     />
     <br />
 
@@ -64,7 +73,7 @@
   <p>Sweetness: {{this.sweetness}}</p>
   <p>Price: {{this.price}}</p>
   <p>Matches to: {{this.matches}}</p>
-  <p>Comments: {{this.comments}}</p>
+  <p>Comment: {{this.comment}}</p>
   <form action="/profile/{{this._id}}/edit" method="GET">
     <button type="submit" class="btn btn-warning">Edit</button>
   </form>

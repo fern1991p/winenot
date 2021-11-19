@@ -25,7 +25,6 @@ const wineSchema = new Schema({
   },
   comment: {
     type: String,
-    unique: true,
   },
   user: {
     type: Schema.Types.ObjectId,

@@ -39,11 +39,11 @@ router.get("/profile/:id/edit", (req, res, next) => {
 
 router.post("/profile/:id/edit", (req, res, next) => {
   const { id } = req.params;
-  const { image, name, sweetness, price, matches, comments } = req.body;
+  const { image, name, sweetness, price, matches, comment } = req.body;
 
   Wine.findByIdAndUpdate(
     id,
-    { image, name, sweetness, price, matches, comments },
+    { image, name, sweetness, price, matches, comment },
     { new: true }
   )
     .then(() => {
