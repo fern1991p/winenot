@@ -33,7 +33,7 @@ router.post("/signup", (req, res, next) => {
   UserModel.create({ name, email, password: hash })
     .then(() => {
       res.redirect("/signin");
-      console.log(name, email, password);
+      ;
     })
     .catch((err) => {
       next(err);
@@ -86,9 +86,10 @@ router.get("/profile", checkLogIn, (req, res, next) => {
   let myUserInfo = req.session.myProperty;
   Wine.find()
     .populate("user")
-    .then(() => {
-      res.render("wines/wine-collection.hbs", { name: myUserInfo });
-      console.log(myUserInfo);
+    .then((wineCollection) => {
+      console.log(wineCollection)
+      res.render("wines/wine-collection.hbs", { name: myUserInfo, wineCollection });
+      console.log(wineCollection);
     });
 });
 

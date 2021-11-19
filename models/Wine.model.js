@@ -4,24 +4,20 @@ const { Schema, model } = require("mongoose");
 const wineSchema = new Schema({
   image: {
     type: String,
-    unique: true,
   },
   name: {
     type: String,
-    unique: true,
+    required: true,
   },
   sweetness: {
     type: String,
     enum: ["Dry", "Half dry", "Medium sweet", "Sweet"],
-    required: true,
   },
   price: {
     type: Number,
-    unique: true,
   },
   matches: {
     type: String,
-    unique: true,
   },
   comment: {
     type: String,
