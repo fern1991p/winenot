@@ -89,6 +89,8 @@ router.get("/profile", checkLogIn, (req, res, next) => {
     .then((wineCollection) => {
       console.log(wineCollection)
       res.render("wines/wine-collection.hbs", { name: myUserInfo, wineCollection });
+      console.log(user);
+      console.log(User);
       console.log(wineCollection);
     });
 });

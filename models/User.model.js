@@ -6,15 +6,15 @@ const userSchema = new Schema(
     image: String,
     name: {
       type: String,
-      unique: true
+      required: true
     },
     email: {
       type: String,
-      unique: true
+      required: true
     },
     password: {
       type: String,
-      unique: true
+      required: true
     }
   },
 );
