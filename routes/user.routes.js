@@ -25,15 +25,13 @@ router.post("/signup", (req, res, next) => {
   //add email and password validation (do when finish testing)
   //regex - need to REQUIRE! Done! Install. Done! Password is hashed now. Please remember password, fernanda
   var salt = bcrypt.genSaltSync(10);
-  console.log("salt:", salt);
+
   var hash = bcrypt.hashSync(password, salt);
-  console.log("hash:", hash);
 
   //create the data in my mongoose. Check? Done.
   UserModel.create({ name, email, password: hash })
     .then(() => {
       res.redirect("/signin");
-      console.log(name, email, password);
     })
     .catch((err) => {
       next(err);
@@ -84,14 +82,19 @@ const checkLogIn = (req, res, next) => {
 
 router.get("/profile", checkLogIn, (req, res, next) => {
   let myUserInfo = req.session.myProperty;
+
   Wine.find()
     .populate("user")
-    .then((result) => {
-      //   let wine = result.filter((elem) => {
-      //     return elem.user._id == _id;
-      //   });
-      res.render("wines/wine-collection.hbs", { myUserInfo });
+    .then((wineCollection) => {
+      let usersWine = wineCollection.filter((elem) => {
+        return elem.myUserInfo_id;
+      });
+      res.render("wines/wine-collection.hbs", {
+        name: myUserInfo,
+        usersWine,
+      });
       console.log(myUserInfo);
+      console.log(usersWine);
     });
 });
 

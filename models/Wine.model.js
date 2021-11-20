@@ -7,27 +7,24 @@ const wineSchema = new Schema({
   },
   name: {
     type: String,
-    unique: true,
+    required: true,
   },
   sweetness: {
     type: String,
     enum: ["Dry", "Half dry", "Medium sweet", "Sweet"],
-    required: true,
   },
   price: {
     type: Number,
-    unique: true,
   },
   matches: {
     type: String,
-    unique: true,
   },
   comment: {
     type: String,
   },
   user: {
     type: Schema.Types.ObjectId,
-    ref: "User",
+    ref: "user",
   },
 });
 

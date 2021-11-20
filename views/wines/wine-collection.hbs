@@ -3,7 +3,7 @@
   {{{name.name}}}'s collection
 </h1>
 
-<form action="\\\\\logout">
+<form action="/logout">
   <input type="submit" value="Log Out" />
 </form>
 
@@ -67,7 +67,8 @@
 // Listed wine collection
 
 <h4>WINECARD HERE</h4>
-{{#each wineCollection}}
+{{#each usersWine}}
+
   <img src="{{this.image}}" />
   <p>Name: {{this.name}}</p>
   <p>Sweetness: {{this.sweetness}}</p>

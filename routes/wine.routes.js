@@ -5,13 +5,15 @@ const Wine = require("../models/Wine.model");
 // ------------------------------READ-----------------------------------
 
 //todo: link to error page in catch err
-router.get("/profile", (req, res, next) => {
-  Wine.find()
-    .then((wineCollection) =>
-      res.render("wines/wine-collection.hbs", { wineCollection })
-    )
-    .catch((err) => console.log("Err while getting all wines: ", err));
-});
+// router.get("/profile", (req, res, next) => {
+//   Wine.find()
+//     .then((wineCollection) =>
+    
+//     res.render("wines/wine-collection.hbs", { wineCollection })
+      
+//     )
+//     .catch((err) => console.log("Err while getting all wines: ", err));
+// });
 
 // ------------------------------CREATE-----------------------------------
 
