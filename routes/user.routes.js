@@ -86,8 +86,11 @@ router.get("/profile", checkLogIn, (req, res, next) => {
   let myUserInfo = req.session.myProperty;
   Wine.find()
     .populate("user")
-    .then(() => {
-      res.render("wines/wine-collection.hbs", { name: myUserInfo });
+    .then((result) => {
+      //   let wine = result.filter((elem) => {
+      //     return elem.user._id == _id;
+      //   });
+      res.render("wines/wine-collection.hbs", { myUserInfo });
       console.log(myUserInfo);
     });
 });

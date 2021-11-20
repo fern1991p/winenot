@@ -4,7 +4,6 @@ const { Schema, model } = require("mongoose");
 const wineSchema = new Schema({
   image: {
     type: String,
-    unique: true,
   },
   name: {
     type: String,
