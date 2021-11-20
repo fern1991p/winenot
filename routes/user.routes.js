@@ -82,20 +82,15 @@ const checkLogIn = (req, res, next) => {
 
 router.get("/profile", checkLogIn, (req, res, next) => {
   let myUserInfo = req.session.myProperty;
-
-  Wine.find()
-    .populate("user")
-    .then((wineCollection) => {
-      let usersWine = wineCollection.filter((elem) => {
-        return elem.myUserInfo_id;
-      });
-      res.render("wines/wine-collection.hbs", {
-        name: myUserInfo,
-        usersWine,
-      });
-      console.log(myUserInfo);
-      console.log(usersWine);
+  const user = req.session.myProperty._id;
+  Wine.find({ user })
+  .then((wineCollection) => {
+    res.render("wines/wine-collection.hbs", {
+      name: myUserInfo,
+      wineCollection,
     });
+    console.log(myUserInfo);
+  });
 });
 
 router.get("/logout", (req, res, next) => {

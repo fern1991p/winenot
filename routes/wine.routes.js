@@ -8,9 +8,9 @@ const Wine = require("../models/Wine.model");
 // router.get("/profile", (req, res, next) => {
 //   Wine.find()
 //     .then((wineCollection) =>
-    
+
 //     res.render("wines/wine-collection.hbs", { wineCollection })
-      
+
 //     )
 //     .catch((err) => console.log("Err while getting all wines: ", err));
 // });
@@ -23,6 +23,7 @@ router.get("/profile", (req, res, next) => {
 });
 
 router.post("/profile", (req, res, next) => {
+  req.body.user = req.session.myProperty._id;
   Wine.create(req.body)
     .then(() => {
       res.redirect("/profile");
