@@ -7,6 +7,16 @@ body {
   background-image: url("/images/wine.jpeg");
   color: #cdcdcd;
   font-family: "Avenir Next", "Avenir", sans-serif;
+  /* Background image doesn’t tile */
+  background-repeat: no-repeat;
+
+/* Background image is fixed in the viewport so that it doesn’t move when
+the content’s height is greater than the image’s height */
+  background-attachment: fixed;
+
+/* This is what makes the background image rescale based
+on the container’s size */
+background-size: cover;
   
   overflow-x: hidden; /* needed because hiding the menu on the right side is not perfect,  */
 }
@@ -433,4 +443,29 @@ Isn't nice but i couldnt find the perfect color! Its driving me crazy!
 color: rgb(54, 51, 51);
 text-align: center;
 letter-spacing: 2px;
+}
+/*  Alert popup
+*/
+.alert {
+  padding: 20px;
+  background-color:tomato; /* Red */
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: black;
 }
