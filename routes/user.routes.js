@@ -99,4 +99,22 @@ router.get("/logout", (req, res, next) => {
   res.redirect("/");
 });
 
+// QUIZ, RANDOM AND COLLECTION:
+router.get("/quiz", (req, res, next) => {
+  res.render("wines/quiz.hbs");
+});
+router.get("/random-wine", (req, res, next) => {
+  res.render("wines/random-wine.hbs");
+});
+
+router.get("/collection", (req, res, next) => {
+  res.render("wines/collection.hbs");
+});
+
+
+
+
+
+
+
 module.exports = router;
