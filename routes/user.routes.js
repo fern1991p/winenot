@@ -83,8 +83,7 @@ const checkLogIn = (req, res, next) => {
 router.get("/profile", checkLogIn, (req, res, next) => {
   let myUserInfo = req.session.myProperty;
   const user = req.session.myProperty._id;
-  Wine.find({ user })
-  .then((wineCollection) => {
+  Wine.find({ user }).then((wineCollection) => {
     res.render("wines/wine-collection.hbs", {
       name: myUserInfo,
       wineCollection,
