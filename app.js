@@ -19,33 +19,38 @@ const app = express();
 require("./config")(app);
 
 // default value for title local
-const projectName = 'wineNot?';
-const capitalized = string => string[0].toUpperCase() + string.slice(1).toLowerCase();
+const projectName = "wineNot";
+const capitalized = (string) =>
+  string[0].toUpperCase() + string.slice(1).toLowerCase();
 
 app.locals.title = `${capitalized(projectName)}`;
 
-const session = require('express-session');
-const MongoStore = require('connect-mongo');
+const session = require("express-session");
+const MongoStore = require("connect-mongo");
 
-app.use(session({
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: false, 
-  cookie: {
-    maxAge: 1000 * 24* 60 * 60 // your cookie will be cleared after these seconds
-  },
-  store: MongoStore.create({
-    mongoUrl: process.env.MONGODB_URI || "mongodb://localhost/winenot",
-    // Time to Live for sessions in DB. After that time it will delete it!
-    ttl: 24* 60 * 60 // your session will be cleared after these seconds
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 1000 * 24 * 60 * 60, // your cookie will be cleared after these seconds
+    },
+    store: MongoStore.create({
+      mongoUrl: process.env.MONGODB_URI || "mongodb://localhost/winenot",
+      // Time to Live for sessions in DB. After that time it will delete it!
+      ttl: 24 * 60 * 60, // your session will be cleared after these seconds
+    }),
   })
-}));
+);
+
+app.use(express.static("public"));
 
 // 👇 Start handling routes here
-const index = require('./routes/index');
-app.use('/', index);
+const index = require("./routes/index");
+app.use("/", index);
 
-const authRoutes = require('./routes/user.routes')
+const authRoutes = require("./routes/user.routes");
 app.use("/", authRoutes);
 
 const wine = require("./routes/wine.routes");

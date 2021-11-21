@@ -1,25 +1,25 @@
-<h1>
-
-  {{{name.name}}}'s collection
-</h1>
-
 <form action="/logout">
   <input type="submit" value="Log Out" />
 </form>
 
-<h1>Here are listed your wine collection on your profile</h1>
+
+
+
+<h1 class="title-collection">
+
+  {{{name.name}}}'s collection
+</h1>
+
+
+
+
 
 <form action="/profile" method="POST">
   <label for="wine">ADD YOUR WINE:</label>
 
   <div class="mb-3">
     <label class="form-label">Your image:</label>
-    <input
-      class="form-control"
-      placeholder="A picture of your wine"
-      type="text"
-      name="image"
-    />
+    <input type="file" id="image-input" accept="image/png, image/jpg"></input>
     <br />
     <label class="form-label">Name of wine:</label>
     <input class="form-control" placeholder="Name" type="text" name="name" />
@@ -64,12 +64,12 @@
   <button class="btn btn-primary" type="submit">ADD</button>
 </form>
 
-// Listed wine collection
+
 
 <h4>WINECARD HERE</h4>
 {{#each wineCollection}}
 
-  <img src="{{this.image}}" />
+  <div>{{this.image}}</div>
   <p>Name: {{this.name}}</p>
   <p>Sweetness: {{this.sweetness}}</p>
   <p>Price: {{this.price}}</p>

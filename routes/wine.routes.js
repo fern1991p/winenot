@@ -1,25 +1,13 @@
 const express = require("express");
+const { collection } = require("../models/Wine.model");
 const router = express.Router();
 const Wine = require("../models/Wine.model");
-
-// ------------------------------READ-----------------------------------
-
-//todo: link to error page in catch err
-// router.get("/profile", (req, res, next) => {
-//   Wine.find()
-//     .then((wineCollection) =>
-
-//     res.render("wines/wine-collection.hbs", { wineCollection })
-
-//     )
-//     .catch((err) => console.log("Err while getting all wines: ", err));
-// });
 
 // ------------------------------CREATE-----------------------------------
 
 //form in sidebar-toggle?
 router.get("/profile", (req, res, next) => {
-  res.render("wines/wine-collection.hbs");
+  res.render("wines/wine-collection.hbs", { style: "collection.css" });
 });
 
 router.post("/profile", (req, res, next) => {
