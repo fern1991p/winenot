@@ -317,7 +317,7 @@ a:hover {
 input {
   background-image: none;
   border: 0;
-  color: inherit;
+  color: darkslategrey;
   font: inherit;
   margin: 0;
   outline: 0;
@@ -352,10 +352,10 @@ input[type="submit"] {
 
 :root {
   --loginBorderRadus: 0.25rem;
-  --loginColor: #eee;
+  --loginColor: rgba(238, 238, 238, 0);
 
   --loginInputBackgroundColor: #3b4148;
-  --loginInputHoverBackgroundColor: #434a52;
+  --loginInputHoverBackgroundColor: #13171b;
 
   --loginLabelBackgroundColor: #363b41;
 
@@ -419,3 +419,18 @@ p {
   text-align: center;
 }
 
+.align-signs-text {
+color: lightgrey;
+text-align: center;
+letter-spacing: 2px;
+}
+/*  Had a problem. Created a second class
+because the sign UP needs to change the font color
+so.... there's my second class:
+Isn't nice but i couldnt find the perfect color! Its driving me crazy!
+*/
+.align-signup-text{
+color: rgb(54, 51, 51);
+text-align: center;
+letter-spacing: 2px;
+}
