@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   padding: 0;
@@ -6,7 +5,7 @@ body {
   /* make it look decent enough */
   background-image: url("/images/wine.jpeg");
   color: #cdcdcd;
-  font-family: "Avenir Next", "Avenir", sans-serif;
+  font-family: "Barlow", sans-serif;
   /* Background image doesn’t tile */
   background-repeat: no-repeat;
 
@@ -16,39 +15,34 @@ the content’s height is greater than the image’s height */
 
 /* This is what makes the background image rescale based
 on the container’s size */
-background-size: cover;
-  
+  background-size: cover;
   overflow-x: hidden; /* needed because hiding the menu on the right side is not perfect,  */
 }
 
-a
-{
+a {
   text-decoration: none;
   color: #232323;
 
   transition: color 0.3s ease;
 }
 
-a:hover
-{
+a:hover {
   color: tomato;
 }
 
-#menuToggle
-{
+#menuToggle {
   display: block;
   position: absolute;
   top: 50px;
   right: 50px;
-  
+
   z-index: 1;
-  
+
   -webkit-user-select: none;
   user-select: none;
 }
 
-#menuToggle input
-{
+#menuToggle input {
   display: block;
   width: 40px;
   height: 32px;
@@ -114,8 +108,7 @@ a:hover
 /*
  * Ohyeah and the last one should go the other direction
  */
-#menuToggle input:checked ~ span:nth-last-child(2)
-{
+#menuToggle input:checked ~ span:nth-last-child(2) {
   opacity: 1;
   transform: rotate(-45deg) translate(0, -1px);
 }
@@ -131,7 +124,7 @@ a:hover
   padding: 50px;
   padding-top: 125px;
   right: -100px;
-  
+
   background: #ededed;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
@@ -139,8 +132,8 @@ a:hover
 
   transform-origin: 0% 0%;
   transform: translate(100%, 0);
-  
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 
 #menu li {
@@ -161,14 +154,9 @@ a:hover
     transform: none;
     opacity: 0;
 
-    transition: opacity 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    transition: opacity 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   }
 }
-
-
-/*--------------------------------------------
- * COLLECTION PAGE
- ---------------------------------------------*/
 
 .title-collection {
   background: white;
@@ -213,11 +201,6 @@ a:hover
  * Fernanda playing around with SIGN IN and SIGN UP
  ---------------------------------------------*/
 
- @use postcss-preset-env {
-  stage: 0;
-}
-
-/* config.css */
 
 :root {
   --baseColor: #606468;
@@ -552,4 +535,118 @@ letter-spacing: 2px;
     40% { top: -100px; }
     60% { top: -150px; }
     80% { top: -200px; }
+}
+.collection-container {
+  display: flex;
+}
+
+/*--------------------------------------------
+ * WINE CARD
+ ---------------------------------------------*/
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 4rem 5vw;
+  padding: 0;
+  list-style-type: none;
+}
+
+.card {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 20%;
+  border-radius: 1rem;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.card__image {
+  width: 100%;
+  height: auto;
+}
+
+.card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  transform: translateY(100%);
+  transition: 0.2s ease-in-out;
+}
+
+.card:hover .card__overlay {
+  transform: translateY(0);
+}
+
+.card__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-top-left-radius: 2rem;
+  background-color: white;
+  transform: translateY(-100%);
+  transition: 0.1s ease-in-out;
+}
+
+.card:hover .card__header {
+  transform: translateY(0);
+}
+
+.card__title {
+  font-size: 1em;
+  margin: 0;
+  color: black;
+}
+
+.card__status {
+  font-size: 0.8em;
+  color: black;
+}
+
+.card__header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__description {
+  padding: 0 1rem;
+  margin: 0;
+  color: black;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  background-color: white;
+  font-size: 0.8rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: white;
+  font-family: "Barlow", sans-serif;
+  border: none;
+  margin: 0;
+}
+
+.error_page {
+  background-image: url("/public/images/error.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: coral;
+}
+
+.error_title {
+  text-align: center;
+}
+
+.btn-danger {
+  margin-right: 2rem;
 }

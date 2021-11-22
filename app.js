@@ -14,6 +14,7 @@ const express = require("express");
 const hbs = require("hbs");
 
 const app = express();
+app.use(express.static("dist"));
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
@@ -43,8 +44,6 @@ app.use(
     }),
   })
 );
-
-app.use(express.static("public"));
 
 // 👇 Start handling routes here
 const index = require("./routes/index");
