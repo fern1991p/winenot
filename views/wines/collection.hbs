@@ -1,37 +1,35 @@
 <h1 class="title-collection">
 
-collection API page 
+  Wine Collection
 </h1>
-<div class="landing"> 
-<nav role="navigation">
-  <div id="menuToggle">
-    <!--
-    A fake / hidden checkbox is used as click reciever,
-    so you can use the :checked selector on it.
-    -->
-    <input type="checkbox" />
-    
-    <!--
-    Some spans to act as a hamburger.
-    
-    They are acting like a real hamburger,
-    not that McDonalds stuff.
-    -->
-    <span></span>
-    <span></span>
-    <span></span>
-    
-    <!--
-    Too bad the menu has to be inside of the button
-    but hey, it's pure CSS magic.
-    -->
-    <ul id="menu">
-      <a href="/logout"><li>Log out</li></a>
-      <a href="/profile"><li>My collection</li></a>
-      <a href="/quiz"><li>Quiz</li></a>
-      <a href="/collection"><li>Our collection</li></a>
-      <a href="/random-wine"><li>Random Wine</li></a>
-     </ul>
-  </div>
-</nav>
+<div class="landing">
+  <nav role="navigation">
+    <div id="menuToggle">
+
+      <input type="checkbox" />
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+      <ul id="menu">
+        <a href="/logout"><li>Log out</li></a>
+        <a href="/profile"><li>My collection</li></a>
+        <a href="/quiz"><li>Quiz</li></a>
+        <a href="/collection"><li>Wine collection</li></a>
+        <a href="/random-wine"><li>Random Wine</li></a>
+      </ul>
+    </div>
+  </nav>
 </div>
+
+{{#each recommendedWines}}
+
+  <img src="{{this.imageUrl}}" />
+  <h3>{{this.title}}</h3>
+  <span>{{this.price}}</span>
+  <span>{{this.description}} </span>
+  <span>{{this.ratingCount}} </span>
+  <a href="{{this.link}}">Buy </a>
+
+{{/each}}

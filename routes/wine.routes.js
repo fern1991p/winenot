@@ -7,7 +7,9 @@ const Wine = require("../models/Wine.model");
 
 //form in sidebar-toggle?
 router.get("/profile", (req, res, next) => {
-  res.render("wines/wine-collection.hbs", { style: "collection.css" });
+  res.render("wines/wine-collection.hbs", {
+    customstyle: `<link rel="stylesheet" href="/stylesheets/collection.css">`,
+  });
 });
 
 router.post("/profile", (req, res, next) => {
