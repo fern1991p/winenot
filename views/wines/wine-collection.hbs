@@ -44,12 +44,12 @@
 
 
 <div class="collection-container">
-<form action="/profile" method="POST">
+<form action="/profile" method="POST" enctype="multipart/form-data">
   <label for="wine">ADD YOUR WINE:</label>
 
   <div class="mb-3">
     <label class="form-label">Your image:</label>
-    <input type="file" id="image-input" accept="image/png, image/jpg"></input>
+    <input type="file" name="image" id="image-input" accept="image/png, image/jpg"></input>
     <br />
     <label class="form-label">Name of wine:</label>
     <input class="form-control" placeholder="Name" type="text" name="name" />
@@ -100,7 +100,7 @@
 {{#each wineCollection}}
  <li>
     <a href="" class="card">
-      <img src="https://cdn.vox-cdn.com/thumbor/4dzTrzfGWRoVWqSTIM8wQJ_wYQc=/0x0:2400x1600/1220x813/filters:focal(1008x608:1392x992):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/63977740/GettyImages_160836693.0.jpg" class="card__image" alt="" />
+      <img src="{{this.image}}" class="card__image" alt="" />
       <div class="card__overlay">
         <div class="card__header">
           <div class="card__header-text">

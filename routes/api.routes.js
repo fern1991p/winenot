@@ -10,19 +10,11 @@ const wines = [
   "malbec",
   "bordeaux",
   "gewurztraminer",
+  "chardonnay",
+  "riesling",
+  "sauvignon_blanc",
+  "pinot_grigio",
 ];
-//   "Terret noir",
-//   "Chardonnay",
-//   "Riesling",
-//   "Pinot Grigio",
-//   "Sauvignon Blanc",
-//   "Semillon",
-//   "Gewürztraminer",
-//   "Porvence Rosé",
-//   "Grenache Rosé",
-//   "Syrah Rosé",
-//   "Pinot Noir Rosé",
-// ];
 
 router.get("/collection", (req, res, next) => {
   let myPromises = [];
