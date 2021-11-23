@@ -5,32 +5,25 @@ document.addEventListener(
   },
   false
 );
-
-// FERNS
-
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
-// to hide
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
-// Path to my result.. testing:
+// Wine path
 const merlotButton = document.getElementById('merlot-btn')
 const pinotnButton = document.getElementById('pinotn-btn')
 const pinotgButton = document.getElementById('pinotg-btn')
 const sauvButton = document.getElementById('sauv-btn')
 
-
-
-
-
-
-
 let shuffledQuestions, currentQuestionIndex
 let total = 0
-//start 
-startButton.addEventListener('click', startGame)
 
+// Hi, my code works as in a point-based system. Each "correct" question worth 250 points,
+// each "wrong" anwser worth 0 zero points. By the end, you total points will be compared in my quiz function
+// and assign to a especic wine.
+
+startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
   currentQuestionIndex++
   setNextQuestion()
@@ -55,23 +48,6 @@ function quiz(num){
   }
 }
 
-
-wines =[
-  {name:"merlot red wine", min: 750, max: 1000}, // total > 750
-  {name:"pinot noir red wine", min: 500, max: 749}, //total > 500 && <749
-  {name:"pinot grigio red wine", min: 250, max: 499}, // total > 250 && <499
-  {name:"white sauvignon blanc", min: 0, max: 249}  // total < 249
-]
-
-// if you are reading my code.. There is no right or wrong, but its a points-based system.. 
-// for every "correct": 250 points 
-// for every "wrong": 0 points
-// all 4 right questions = 1000 points -> merlot red wine
-// 3 right questions: 750 points -> pinot noir red wine
-// 2 right questions: 500 point -> pinot grigio white wine
-// 1 ou 0 right question: 250 points -> white sauvignon blanc
-
-
 function startGame() {
   console.log("started")
   startButton.classList.add('hide')
@@ -80,12 +56,10 @@ function startGame() {
   questionContainerElement.classList.remove('hide')
   setNextQuestion()
 }
-
 function setNextQuestion() {
   resetState()
   showQuestion(shuffledQuestions[currentQuestionIndex])
 }
-//mybuttons and changing text
 function showQuestion(question) {
   questionElement.innerText = question.question
   question.answers.forEach(answer => {
@@ -99,7 +73,6 @@ function showQuestion(question) {
     answerButtonsElement.appendChild(button)
   })
 }
-
 function resetState() {
   clearStatusClass(document.body)
   nextButton.classList.add('hide')
@@ -107,7 +80,6 @@ function resetState() {
     answerButtonsElement.removeChild(answerButtonsElement.firstChild)
   }
 }
-
 function selectAnswer(e) {
   const selectedButton = e.target
   const correct = selectedButton.dataset.correct
@@ -123,13 +95,9 @@ function selectAnswer(e) {
     nextButton.classList.add('hide')
     startButton.innerText = 'Restart' 
     startButton.classList.add('hide')
-
-    //over here!!!
   }
 
 }
-
-
 function setStatusClass(element, correct) {
   clearStatusClass(element)
   if (correct) {
@@ -140,15 +108,12 @@ function setStatusClass(element, correct) {
     total += 0 ;
     element.classList.add('wrong')
   }
-  console.log(total)
+ 
 }
-//this i wont have, clean this before break if removed
 function clearStatusClass(element) {
   element.classList.remove('correct')
   element.classList.remove('wrong')
 }
-// testing something... i works. keep it 
-
 const questions = [
   {
     question: 'What`s your favorite type of wine?',
