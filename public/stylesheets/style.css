@@ -674,7 +674,7 @@ Isn't nice but i couldnt find the perfect color! Its driving me crazy!
 }
 
 .error_page {
-  background-image: url("/public/images/error.jpg");
+  background-image: url("images/error.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   color: coral;
