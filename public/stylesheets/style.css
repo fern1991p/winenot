@@ -296,12 +296,7 @@ a {
   text-decoration: none;
 }
 
-/* a:focus,
-a:hover {
-  text-decoration: underline;
-} */
 
-/* modules/form.css */
 
 :root {
   --formGap: 0.875rem;
@@ -422,6 +417,7 @@ because the sign UP needs to change the font color
 so.... there's my second class:
 Isn't nice but i couldnt find the perfect color! Its driving me crazy!
 */
+
 .align-signup-text{
 color: white;
 text-align: center;
@@ -432,6 +428,7 @@ letter-spacing: 2px;
 .alert {
   padding: 20px;
   background-color:tomato; /* Red */
+  border-radius: 5px;
   color: white;
   margin-bottom: 15px;
 }
@@ -649,4 +646,80 @@ letter-spacing: 2px;
 
 .btn-danger {
   margin-right: 2rem;
+}
+
+/*
+form label - fern
+*/
+
+.box-main-wrap {
+  width: 640px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.box-text {
+  margin-top:50px;
+  background-color: lightgrey;
+  position: absolute;
+  width: 320px;
+  height: 400px;
+  opacity: 0.8;
+  top: 130px;
+  left: 0;
+  text-align: center;
+  border: 2px solid silver;
+}
+
+#box-content {
+  padding: 100px 30px;
+}
+input[type=text] {
+  opacity: 0.5;
+  border: none;
+  border-bottom: 2px solid black;
+}
+
+
+/*
+QUIZ
+*/
+
+.bodyquiz{
+  height: 30%;
+}
+#bodyquestions{
+  margin: 20px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.container {
+  padding-top: 60px;
+  background-color: darkgrey;
+  opacity: 0.85;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 2px;
+  
+}
+.btn-grid{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0px;
+}
+.controls{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px
+}
+
+
+
+
+ .hide {
+  display: none;
 }

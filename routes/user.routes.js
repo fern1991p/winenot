@@ -103,6 +103,7 @@ router.get("/logout", (req, res, next) => {
 router.get("/quiz", (req, res, next) => {
   res.render("wines/quiz.hbs");
 });
+
 router.get("/random-wine", (req, res, next) => {
   res.render("wines/random-wine.hbs");
 });
@@ -114,6 +115,21 @@ router.get("/collection", (req, res, next) => {
 router.get("/profile", (req, res, next) => {
   res.render("auth/profile.hbs");
 });
+
+// fern changes
+
+router.get("/merlot-result", (req, res, next) => {
+  res.render("quizResult/merlot-result.hbs");
+}); 
+router.get("/pinotn-result", (req, res, next) => {
+  res.render("quizResult/pinotn-result.hbs");
+}); 
+router.get("/pinotg-result", (req, res, next) => {
+  res.render("quizResult/pinotg-result.hbs");
+}); 
+router.get("/sauvignonblanc-result", (req, res, next) => {
+  res.render("quizResult/sauvignonblanc-result.hbs");
+}); 
 
 
 
