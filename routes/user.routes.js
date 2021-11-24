@@ -103,8 +103,5 @@ router.get("/logout", (req, res, next) => {
 router.get("/quiz", (req, res, next) => {
   res.render("wines/quiz.hbs");
 });
-router.get("/random-wine", (req, res, next) => {
-  res.render("wines/random-wine.hbs");
-});
 
 module.exports = router;

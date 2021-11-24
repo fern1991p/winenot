@@ -40,6 +40,10 @@
   transform: translateY(0);
 }
 
+.luise {
+  background-color: rgb(206, 4, 4);
+}
+
 .card__header {
   position: relative;
   display: flex;
