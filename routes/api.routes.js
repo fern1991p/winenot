@@ -51,4 +51,25 @@ router.post("/collection", (req, res, next) => {
 //   });
 // });
 
+
+router.get("/quizresult/:name", (req, res, next) => {
+    
+    ApiWine.findOne({title: {"$regex": req.params.name, $options: 'i'} })
+      .then((wine) => {
+      console.log(wine)
+      console.log("working")
+      res.render("quizResult/result.hbs", { wine });
+    })
+    
+      .catch((err) => {
+        res.render("quizResult/result.hbs");
+      });
+    
+  }); 
+
+
+
+
+
+
 module.exports = router;

@@ -106,9 +106,10 @@ router.get("/quiz", (req, res, next) => {
 
 // fern changes
 
-router.get("/merlot-result", (req, res, next) => {
-  res.render("quizResult/merlot-result.hbs");
-}); 
+
+//hereeeeeeeeee
+
+
 router.get("/pinotn-result", (req, res, next) => {
   res.render("quizResult/pinotn-result.hbs");
 }); 
