@@ -59,43 +59,43 @@ router.get("/profile/:id/delete", (req, res, next) => {
     .catch((err) => console.log("Err while deleting a wine: ", err));
 });
 
-// FERN quiz below (similar to luise, carefull when merging)
-const SPOONACULAR_KEY = process.env.SPOONACULAR_KEY;
+// // FERN quiz below (similar to luise, carefull when merging)
+// const SPOONACULAR_KEY = process.env.SPOONACULAR_KEY;
 
- const wines = [
-   "merlot",
-   "pinot_noir",
-   "chardonnay",
-   "riesling",
- ];
+//  const wines = [
+//    "merlot",
+//    "pinot_noir",
+//    "chardonnay",
+//    "riesling",
+//  ];
 
- router.get("/collection", (req, res, next) => {
-   let myPromises = [];
-   for (i = 0; i < wines.length; i++) {
-     myPromises.push(
-       fetch(
-         `https//:api.spoonacular.com/food/wine/recommendation?wine=${wines[i]}&number=1&apiKey=${process.env.SPOONACULAR_KEY}`
-       )
+//  router.get("/collection", (req, res, next) => {
+//    let myPromises = [];
+//    for (i = 0; i < wines.length; i++) {
+//      myPromises.push(
+//        fetch(
+//          `https//:api.spoonacular.com/food/wine/recommendation?wine=${wines[i]}&number=1&apiKey=${process.env.SPOONACULAR_KEY}`
+//        )
 
-     );
-   }
-   Promise.all(myPromises)
-     .then((responses) => {
-       let merge = [];
-       responses.forEach((eachResp) => {
-         console.log(merge.length);
-         merge = [...merge, ...eachResp.data.recommendedWines];
-       });
+//      );
+//    }
+//    Promise.all(myPromises)
+//      .then((responses) => {
+//        let merge = [];
+//        responses.forEach((eachResp) => {
+//          console.log(merge.length);
+//          merge = [...merge, ...eachResp.data.recommendedWines];
+//        });
        
-       //You will get an array of responses
-       re.redirect("wines/suggestion.hbs", {
-         recommendedWines: merge,
-       });
-     })
-     .catch((err) => {
-       next(err);
-     });
- });
+//        //You will get an array of responses
+//        re.redirect("wines/suggestion.hbs", {
+//          recommendedWines: merge,
+//        });
+//      })
+//      .catch((err) => {
+//        next(err);
+//      });
+//  });
 
 //recommendedWines API nested obj
 // FERN quiz below:
