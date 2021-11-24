@@ -1,43 +1,82 @@
 body {
   margin: 0;
   padding: 0;
-
-  /* make it look decent enough */
   background-image: url("/images/wine.jpeg");
   color: #cdcdcd;
   font-family: "Barlow", sans-serif;
-  /* Background image doesn’t tile */
   background-repeat: no-repeat;
-
-  /* Background image is fixed in the viewport so that it doesn’t move when
-the content’s height is greater than the image’s height */
   background-attachment: fixed;
-
-  /* This is what makes the background image rescale based
-on the container’s size */
   background-size: cover;
   overflow-x: hidden; /* needed because hiding the menu on the right side is not perfect,  */
+}
+
+:root {
+  --primaryColor: #31393c;
+  --secondaryColor: #cdcdcd;
+  --boldColor: tomato;
+  --loginBorderRadus: 0.25rem;
+  --loginColor: #31393c;
+  --loginInputBackgroundColor: #3b4148;
+  --loginInputHoverBackgroundColor: #13171b;
+  --loginLabelBackgroundColor: #363b41;
+  --loginSubmitBackgroundColor: tomato;
+  --loginSubmitColor: #eee;
+  --loginSubmitHoverBackgroundColor: tomato;
+  --baseColor: #606468;
+  --iconFill: var(--baseColor);
+}
+:root {
+  --htmlFontSize: 100%;
+  --bodyBackgroundColor: #2c3338;
+  --bodyColor: var(--baseColor);
+  --bodyFontFamily: "Open Sans";
+  --bodyFontFamilyFallback: sans-serif;
+  --bodyFontSize: 0.875rem;
+  --bodyFontWeight: 400;
+  --bodyLineHeight: 1.5;
+}
+:root {
+  --iconFill: var(--baseColor);
+  --formGap: 0.875rem;
+}
+
+body {
+  background-color: var(--bodyBackgroundColor);
+  color: var(--bodyColor);
+  font-family: var(--bodyFontFamily), var(--bodyFontFamilyFallback);
+  font-size: var(--bodyFontSize);
+  font-weight: var(--bodyFontWeight);
+  line-height: var(--bodyLineHeight);
+  margin: 0;
+  min-block-size: 100vh;
 }
 
 a {
   text-decoration: none;
   color: #232323;
-
   transition: color 0.3s ease;
+}
+
+a {
+  color: var(--anchorColor);
+  outline: 0;
+  text-decoration: none;
 }
 
 a:hover {
   color: tomato;
 }
 
+/*------------------------------------------
+ *               Menu Toggle
+ -------------------------------------------*/
+
 #menuToggle {
   display: block;
   position: absolute;
   top: 50px;
   right: 50px;
-
   z-index: 1;
-
   -webkit-user-select: none;
   user-select: none;
 }
@@ -49,32 +88,22 @@ a:hover {
   position: absolute;
   top: -7px;
   left: -5px;
-
   cursor: pointer;
-
-  opacity: 0; /* hide this */
-  z-index: 2; /* and place it over the hamburger */
-
+  opacity: 0;
+  z-index: 2;
   -webkit-touch-callout: none;
 }
 
-/*
- * Just a quick hamburger
- */
 #menuToggle span {
   display: block;
   width: 33px;
   height: 4px;
   margin-bottom: 5px;
   position: relative;
-
   background: #cdcdcd;
   border-radius: 3px;
-
   z-index: 1;
-
   transform-origin: 4px 0px;
-
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
     background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
@@ -87,36 +116,22 @@ a:hover {
   transform-origin: 0% 100%;
 }
 
-/* 
- * Transform all the slices of hamburger
- * into a crossmark.
- */
 #menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
 }
 
-/*
- * But let's hide the middle one.
- */
 #menuToggle input:checked ~ span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-/*
- * Ohyeah and the last one should go the other direction
- */
 #menuToggle input:checked ~ span:nth-last-child(2) {
   opacity: 1;
   transform: rotate(-45deg) translate(0, -1px);
 }
 
-/*
- * Make this absolute positioned
- * at the top left of the screen
- */
 #menu {
   position: absolute;
   width: 300px;
@@ -124,15 +139,11 @@ a:hover {
   padding: 50px;
   padding-top: 125px;
   right: -100px;
-
   background: #ededed;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
-
   transform-origin: 0% 0%;
   transform: translate(100%, 0);
-
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 
@@ -141,9 +152,6 @@ a:hover {
   font-size: 22px;
 }
 
-/*
- * And let's fade it in from the left
- */
 #menuToggle input:checked ~ ul {
   transform: none;
   opacity: 1;
@@ -153,14 +161,17 @@ a:hover {
   #menu {
     transform: none;
     opacity: 0;
-
     transition: opacity 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   }
 }
 
+/*--------------------------------------------
+ * Profile page
+ ---------------------------------------------*/
+
 .title-collection {
   background: white;
-  color: black;
+  color: var(--primaryColor);
   display: flex;
   justify-content: flex-start;
   padding: 2.5rem;
@@ -196,10 +207,6 @@ a:hover {
  * Fernanda playing around with SIGN IN and SIGN UP
  ---------------------------------------------*/
 
-:root {
-  --baseColor: #606468;
-}
-
 /* helpers/align.css */
 
 .align {
@@ -228,10 +235,6 @@ a:hover {
 
 /* helpers/icon.css */
 
-:root {
-  --iconFill: var(--baseColor);
-}
-
 .icons {
   display: none;
 }
@@ -246,18 +249,6 @@ a:hover {
 
 /* layout/base.css */
 
-:root {
-  --htmlFontSize: 100%;
-
-  --bodyBackgroundColor: #2c3338;
-  --bodyColor: var(--baseColor);
-  --bodyFontFamily: "Open Sans";
-  --bodyFontFamilyFallback: sans-serif;
-  --bodyFontSize: 0.875rem;
-  --bodyFontWeight: 400;
-  --bodyLineHeight: 1.5;
-}
-
 * {
   box-sizing: inherit;
 }
@@ -267,34 +258,7 @@ html {
   font-size: var(--htmlFontSize);
 }
 
-body {
-  background-color: var(--bodyBackgroundColor);
-  color: var(--bodyColor);
-  font-family: var(--bodyFontFamily), var(--bodyFontFamilyFallback);
-  font-size: var(--bodyFontSize);
-  font-weight: var(--bodyFontWeight);
-  line-height: var(--bodyLineHeight);
-  margin: 0;
-  min-block-size: 100vh;
-}
-
-/* modules/anchor.css */
-
-/* :root {
-  --anchorColor: #eee;
-} */
-
-a {
-  color: var(--anchorColor);
-  outline: 0;
-  text-decoration: none;
-}
-
-
-
-:root {
-  --formGap: 0.875rem;
-}
+/* modules/form.css */
 
 input {
   background-image: none;
@@ -331,20 +295,6 @@ input[type="submit"] {
 }
 
 /* modules/login.css */
-
-:root {
-  --loginBorderRadus: 0.25rem;
-  --loginColor: rgba(238, 238, 238, 0);
-
-  --loginInputBackgroundColor: #3b4148;
-  --loginInputHoverBackgroundColor: #13171b;
-
-  --loginLabelBackgroundColor: #363b41;
-
-  --loginSubmitBackgroundColor: #ea4c88;
-  --loginSubmitColor: #eee;
-  --loginSubmitHoverBackgroundColor: #d44179;
-}
 
 .login {
   color: var(--loginColor);
@@ -402,32 +352,19 @@ p {
 }
 
 .align-signs-text {
-  color: white;
+  color: var(--secondaryColor);
   text-align: center;
   letter-spacing: 2px;
 }
-/*  Had a problem. Created a second class
-because the sign UP needs to change the font color
-so.... there's my second class:
-Isn't nice but i couldnt find the perfect color! Its driving me crazy!
-*/
 
-.align-signup-text{
-color: white;
-text-align: center;
-letter-spacing: 2px;
-}
-/*  Alert popup
-*/
 .alert {
   padding: 20px;
-  background-color:tomato; /* Red */
+  background-color: var(--boldColor);
   border-radius: 5px;
   color: white;
   margin-bottom: 15px;
 }
 
-/* The close button */
 .closebtn {
   margin-left: 15px;
   color: white;
@@ -439,15 +376,13 @@ letter-spacing: 2px;
   transition: 0.3s;
 }
 
-/* When moving the mouse over the close button */
 .closebtn:hover {
   color: black;
 }
-/* Playing around with landing page letters */
 
 .Iam {
   padding: 2em 5em;
-  font: normal 40px/50px Montserrat, sans-serif;
+
   color: #999;
 }
 .Iam p {
@@ -574,189 +509,4 @@ letter-spacing: 2px;
   80% {
     top: -200px;
   }
-}
-.collection-container {
-  display: flex;
-}
-/*--------------------------------------------
- * WINE CARD
- ---------------------------------------------*/
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin: 4rem 5vw;
-  padding: 0;
-  list-style-type: none;
-}
-
-.card {
-  position: relative;
-  display: block;
-  height: 100%;
-  width: 65%;
-  border-radius: 1rem;
-  overflow: hidden;
-}
-
-.card__image {
-  width: 100%;
-  height: auto;
-}
-
-.card__overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  transform: translateY(100%);
-  transition: 0.2s ease-in-out;
-}
-
-.card:hover .card__overlay {
-  transform: translateY(0);
-}
-
-.card__header {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top-left-radius: 2rem;
-  background-color: white;
-  transform: translateY(-100%);
-  transition: 0.1s ease-in-out;
-}
-
-.card:hover .card__header {
-  transform: translateY(0);
-}
-
-.card__title {
-  font-size: 1em;
-  margin: 0;
-  color: black;
-}
-
-.card__status {
-  font-size: 0.8em;
-  color: black;
-}
-
-.card__header-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.card__description {
-  padding: 0 1rem;
-  margin: 0;
-  color: black;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  background-color: white;
-  font-size: 0.8rem;
-}
-
-.buttons {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  background-color: white;
-  font-family: "Barlow", sans-serif;
-}
-
-.error_page {
-  background-image: url("images/error.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: coral;
-}
-
-.error_title {
-  text-align: center;
-}
-
-.btn-danger {
-  margin-right: 2rem;
-}
-
-/*
-form label - fern
-*/
-
-.box-main-wrap {
-  width: 640px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.box-text {
-  margin-top:50px;
-  background-color: lightgrey;
-  position: absolute;
-  width: 320px;
-  height: 400px;
-  opacity: 0.8;
-  top: 130px;
-  left: 0;
-  text-align: center;
-  border: 2px solid silver;
-}
-
-#box-content {
-  padding: 100px 30px;
-}
-input[type=text] {
-  opacity: 0.5;
-  border: none;
-  border-bottom: 2px solid black;
-}
-
-
-/*
-QUIZ
-*/
-
-.bodyquiz{
-  height: 30%;
-}
-#bodyquestions{
-  margin: 20px; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-}
-.container {
-  padding-top: 60px;
-  background-color: darkgrey;
-  opacity: 0.85;
-  border-radius: 5px;
-  box-shadow: 0 0 10px 2px;
-  
-}
-.btn-grid{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin: 20px 0px;
-}
-.controls{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px
-}
-
-
-
-
- .hide {
-  display: none;
 }

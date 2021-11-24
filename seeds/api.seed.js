@@ -32,6 +32,7 @@ Promise.all(myPromises)
       let wines = JSON.parse(JSON.stringify(eachResp.data.recommendedWines));
       let updatedWines = wines.map((w) => {
         w.wineType = i < 5 ? "red" : "white";
+        console.log(w);
         return w;
       });
 
