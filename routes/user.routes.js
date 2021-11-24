@@ -107,12 +107,4 @@ router.get("/random-wine", (req, res, next) => {
   res.render("wines/random-wine.hbs");
 });
 
-// router.get("/collection", (req, res, next) => {
-//   res.render("wines/collection.hbs");
-// });
-
-router.get("/profile", (req, res, next) => {
-  res.render("auth/profile.hbs");
-});
-
 module.exports = router;

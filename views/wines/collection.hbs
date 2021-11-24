@@ -1,7 +1,7 @@
 <h1 class="title-collection">
-
   Wine Collection
 </h1>
+
 <div class="landing">
   <nav role="navigation">
     <div id="menuToggle">
@@ -23,7 +23,20 @@
   </nav>
 </div>
 
-{{#each recommendedWines}}
+<div>
+  <form action="/collection/white" method="POST">
+    <button type="submit" class="white-wines">White wines</button>
+  </form>
+  <form action="/collection/red" method="POST">
+    <button type="submit" class="red-wines">Red wines</button>
+  </form>
+
+  <form action="/collection" method="POST">
+    <button type="submit" class="clear-wines">Clear</button>
+  </form>
+</div>
+
+{{#each wines}}
 
   <img src="{{this.imageUrl}}" />
   <h3>{{this.title}}</h3>

@@ -2,9 +2,10 @@ const { Schema, model } = require("mongoose");
 
 const apiWineSchema = new Schema({
   imageUrl: { type: String, default: "images/default_image.jpg" },
-
-  title: {},
-  type: String,
+  wineType: String,
+  title: {
+    type: String,
+  },
   price: {
     type: String,
   },

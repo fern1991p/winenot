@@ -8,49 +8,47 @@ router.get("/collection", (req, res, next) => {
     .then((wines) => {
       res.render("wines/collection.hbs", { wines });
     })
-    .then((err) => {
+    .catch((err) => {
       next(err);
     });
 });
 
-// const SPOONACULAR_KEY = process.env.SPOONACULAR_KEY;
-// const wines = [
-//   "merlot",
-//   "pinot_noir",
-//   "shiraz",
-//   "malbec",
-//   "bordeaux",
-//   "gewurztraminer",
-//   "chardonnay",
-//   "riesling",
-//   "sauvignon_blanc",
-//   "pinot_grigio",
-// ];
+router.post("/collection/white", (req, res, next) => {
+  ApiWine.find({ wineType: "white" })
+    .then((wines) => {
+      res.render("wines/collection.hbs", { wines });
+    })
+    .catch((err) => console.log("Err while editing a wine: ", err));
+});
 
-// router.get("/collection", (req, res, next) => {
-//   let myPromises = [];
-//   for (i = 0; i < wines.length; i++) {
-//     myPromises.push(
-//       axios.get(
-//         `https://api.spoonacular.com/food/wine/recommendation?wine=${wines[i]}&number=20&apiKey=${process.env.SPOONACULAR_KEY}`
-//       )
-//     );
-//   }
-//   Promise.all(myPromises)
-//     .then((responses) => {
-//       let merge = [];
-//       responses.forEach((eachResp) => {
-//         console.log(merge.length);
-//         merge = [...merge, ...eachResp.data.recommendedWines];
+router.post("/collection/red", (req, res, next) => {
+  ApiWine.find({ wineType: "red" })
+    .then((wines) => {
+      res.render("wines/collection.hbs", { wines });
+    })
+    .catch((err) => console.log("Err while editing a wine: ", err));
+});
+
+router.post("/collection", (req, res, next) => {
+  ApiWine.find()
+    .then((wines) => {
+      res.render("wines/collection.hbs", { wines });
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
+
+// router.get("/random", (req, res, next) => {
+//   ApiWine.count().exec(function (err, count) {
+//     let random = Math.floor(Math.random() * count);
+//     ApiWine.findOne()
+//       .skip(random)
+//       .exec(function (err, result) {})
+//       .then((wines) => {
+//         res.render("/wines/random-wine.hbs", { wines });
 //       });
-//       //You will get an array of responses
-//       res.render("wines/collection.hbs", {
-//         recommendedWines: merge,
-//       });
-//     })
-//     .catch((err) => {
-//       next(err);
-//     });
+//   });
 // });
 
 module.exports = router;

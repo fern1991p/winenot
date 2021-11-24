@@ -29,12 +29,13 @@ Promise.all(myPromises)
   .then((responses) => {
     let merge = [];
     responses.forEach((eachResp, i) => {
-      console.log(merge.length);
-      eachResp.data.recommendedWines.forEach((w) =>
-        i < 5 ? (w.type = "red") : (w.type = "white")
-      );
+      let wines = JSON.parse(JSON.stringify(eachResp.data.recommendedWines));
+      let updatedWines = wines.map((w) => {
+        w.wineType = i < 5 ? "red" : "white";
+        return w;
+      });
 
-      merge = [...merge, ...eachResp.data.recommendedWines];
+      merge = [...merge, ...updatedWines];
     });
     return ApiWine.insertMany(merge);
   })
