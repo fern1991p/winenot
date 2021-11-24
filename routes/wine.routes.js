@@ -1,18 +1,23 @@
 const express = require("express");
 const { collection } = require("../models/Wine.model");
 const router = express.Router();
+const uploader = require("../config/cloudinary.config.js");
 const Wine = require("../models/Wine.model");
 
 // ------------------------------CREATE-----------------------------------
 
 //form in sidebar-toggle?
 router.get("/profile", (req, res, next) => {
-  res.render("wines/wine-collection.hbs", { style: "collection.css" });
+  res.render("wines/wine-collection.hbs", {
+    customstyle: `<link rel="stylesheet" href="/stylesheets/collection.css">`,
+  });
 });
 
-router.post("/profile", (req, res, next) => {
+router.post("/profile", uploader.single("image"), (req, res, next) => {
+  console.log("file is: ", req.file);
   req.body.user = req.session.myProperty._id;
-  Wine.create(req.body)
+
+  Wine.create({ image: req.file.path, ...req.body })
     .then(() => {
       res.redirect("/profile");
     })

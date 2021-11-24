@@ -7,7 +7,9 @@
     "dev": "nodemon server.js"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.27.1",
     "connect-mongo": "^4.6.0",
     "connect-mongodb-session": "^3.1.1",
     "cookie-parser": "^1.4.6",
@@ -17,6 +19,8 @@
     "hbs": "^4.2.0",
     "mongoose": "^6.0.13",
     "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "multer-storage-cloudinary": "^4.0.0",
     "regex": "^0.1.1",
     "serve-favicon": "^2.5.0"
   },

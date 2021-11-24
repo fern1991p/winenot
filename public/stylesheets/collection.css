@@ -1,0 +1,95 @@
+/*--------------------------------------------
+ * WINE CARD
+ ---------------------------------------------*/
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 4rem 5vw;
+  padding: 0;
+  list-style-type: none;
+}
+
+.card {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 20%;
+  border-radius: 1rem;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.card__image {
+  width: 100%;
+  height: auto;
+}
+
+.card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  transform: translateY(100%);
+  transition: 0.2s ease-in-out;
+}
+
+.card:hover .card__overlay {
+  transform: translateY(0);
+}
+
+.card__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-top-left-radius: 2rem;
+  background-color: white;
+  transform: translateY(-100%);
+  transition: 0.1s ease-in-out;
+}
+
+.card:hover .card__header {
+  transform: translateY(0);
+}
+
+.card__title {
+  font-size: 1em;
+  margin: 0;
+  color: black;
+}
+
+.card__status {
+  font-size: 0.8em;
+  color: black;
+}
+
+.card__header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__description {
+  padding: 0 1rem;
+  margin: 0;
+  color: black;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  background-color: white;
+  font-size: 0.8rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: white;
+  font-family: "Barlow", sans-serif;
+  border: none;
+  margin: 0;
+}

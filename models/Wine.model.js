@@ -1,10 +1,8 @@
 const { Schema, model } = require("mongoose");
 
-// TODO: Please make sure you edit the user model to whatever makes sense in this case
 const wineSchema = new Schema({
-  image: {
-    type: String,
-  },
+  image: { type: String, default: "images/default_image.jpg" },
+
   name: {
     type: String,
     required: true,

@@ -1,30 +1,19 @@
 <div class="landing"> 
 <nav role="navigation">
   <div id="menuToggle">
-    <!--
-    A fake / hidden checkbox is used as click reciever,
-    so you can use the :checked selector on it.
-    -->
+  
     <input type="checkbox" />
     
-    <!--
-    Some spans to act as a hamburger.
     
-    They are acting like a real hamburger,
-    not that McDonalds stuff.
-    -->
     <span></span>
     <span></span>
     <span></span>
     
-    <!--
-    Too bad the menu has to be inside of the button
-    but hey, it's pure CSS magic.
-    -->
+  
     <ul id="menu">
       <a href="/profile"><li>My collection</li></a>
       <a href="/quiz"><li>Quiz</li></a>
-      <a href="/collection"><li>Our collection</li></a>
+      <a href="/collection"><li>Wine collection</li></a>
       <a href="/random-wine"><li>Random Wine</li></a>
       <a href="/logout"><li>Log out</li></a>
      </ul>
@@ -43,15 +32,14 @@
 
 
 
-<div class="collection-container box-text">
-
-<form action="/profile" method="POST">
+<div class="collection-container">
+<form action="/profile" method="POST" enctype="multipart/form-data">
   <label for="wine">ADD YOUR WINE:</label>
 
   <div class="mb-3">
     <div></div>
     <label class="form-label">Your image:</label>
-    <input type="file" id="image-input" accept="image/png, image/jpg"></input>
+    <input type="file" name="image" id="image-input" accept="image/png, image/jpg"></input>
     <br />
 
     <label class="form-label">Name of wine:</label>
@@ -106,7 +94,7 @@
 {{#each wineCollection}}
  <li>
     <a href="" class="card">
-      <img src="https://cdn.vox-cdn.com/thumbor/4dzTrzfGWRoVWqSTIM8wQJ_wYQc=/0x0:2400x1600/1220x813/filters:focal(1008x608:1392x992):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/63977740/GettyImages_160836693.0.jpg" class="card__image" alt="" />
+      <img src="{{this.image}}" class="card__image" alt="" />
       <div class="card__overlay">
         <div class="card__header">
           <div class="card__header-text">
@@ -119,10 +107,10 @@
         <p class="card__description">Comment: {{this.comment}}</p>
          <div class="buttons">
         <form action="/profile/{{this._id}}/edit" method="GET">
-        <button type="submit" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+        <button type="submit" class="btn btn-warning"><i class="far fa-edit"></i></button>
         </form>
         <form action="/profile/{{this._id}}/delete" method="GET">
-        <button class="btn btn-danger">Delete</button>
+        <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
        </form>
         </div>
       </div>
