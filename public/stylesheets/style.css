@@ -11,9 +11,10 @@ body {
 }
 
 :root {
-  --primaryColor: #31393c;
+  --primaryColor: #242223;
   --secondaryColor: #cdcdcd;
   --boldColor: tomato;
+  --secondaryFontColor: white;
   --loginBorderRadus: 0.25rem;
   --loginColor: #31393c;
   --loginInputBackgroundColor: #3b4148;

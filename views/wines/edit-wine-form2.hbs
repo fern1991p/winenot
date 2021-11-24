@@ -1,0 +1,69 @@
+<form action="/profile/{{oneWine._id}}/edit" method="POST">
+  <label for="wine">Edit your wine:</label>
+
+  <div class="mb-3">
+    <label class="form-label">Your image:</label>
+    <input
+      class="form-control"
+      placeholder="Name"
+      type="text"
+      name="image"
+      value="{{oneWine.image}}"
+    />
+    <br />
+    <label class="form-label">Name of wine:</label>
+    <input
+      class="form-control"
+      placeholder="Name"
+      type="text"
+      name="name"
+      value="{{oneWine.name}}"
+    />
+    <br />
+    <label class="form-label">Sweetness:</label>
+    <select
+      name="sweetness"
+      id="sweetness"
+      value="{{oneWine.sweetness}}"
+      multiple
+    >
+
+      <option value="dry">Dry</option>
+      <option value="medium-dry">Medium dry</option>
+      <option value="medium-sweet">Medium sweet</option>
+      <option value="sweet">Sweet</option>
+
+    </select>
+
+    <br />
+    <label class="form-label">Price:</label>
+    <input
+      class="form-control"
+      placeholder="How much was it?"
+      type="text"
+      name="price"
+      value="{{oneWine.price}}"
+    />
+    <br />
+    <label class="form-label">Match:</label>
+    <input
+      class="form-control"
+      placeholder="Matches to..."
+      type="text"
+      name="matches"
+      value="{{oneWine.matches}}"
+    />
+    <br />
+    <label class="form-label">Comments:</label>
+    <input
+      class="form-control"
+      placeholder="Where you bought it ...?"
+      type="text"
+      name="comment"
+      value="{{oneWine.comment}}"
+    />
+    <br />
+
+  </div>
+  <button type="submit" class="add-btn">Edit</button>
+</form>
