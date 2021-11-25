@@ -8,7 +8,7 @@ const Wine = require("../models/Wine.model");
 
 //form in sidebar-toggle?
 router.get("/profile", (req, res, next) => {
-  res.render("wines/wine-collection.hbs");
+  res.render("wines/profile.hbs");
 });
 
 router.post("/profile", uploader.single("image"), (req, res, next) => {

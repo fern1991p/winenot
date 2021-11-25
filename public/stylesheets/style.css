@@ -7,7 +7,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  overflow-x: hidden; /* needed because hiding the menu on the right side is not perfect,  */
+  overflow-x: hidden;
 }
 
 :root {
@@ -35,9 +35,6 @@ body {
   --bodyFontSize: 0.875rem;
   --bodyFontWeight: 400;
   --bodyLineHeight: 1.5;
-}
-:root {
-  --iconFill: var(--baseColor);
 }
 
 body {

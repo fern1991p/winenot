@@ -5,15 +5,20 @@
  * FORM
  ---------------------------------------------*/
 
-.form {
+.wine-form {
   background: var(--primaryColor);
   color: var(--secondaryFontColor);
   padding: 0.6rem 2.7rem 0.6rem 2rem;
   box-shadow: 0.5rem 1rem 1.2rem rgb(15, 15, 15, 0.6);
 }
-p {
+.add-wine {
   letter-spacing: 0.07rem;
   font-size: 1.2rem;
+}
+
+.wine-form .edit {
+  display: flex;
+  justify-content: center;
 }
 
 #image-input {
@@ -37,7 +42,7 @@ p {
   opacity: 0.9;
 }
 
-input {
+.form-control {
   font-size: 0.8rem;
   height: 2rem;
   padding: 1rem 3rem 1rem 0.5rem;
@@ -52,12 +57,12 @@ input {
   transition: 0.2s ease;
 }
 
-input:focus {
+.form-control:focus {
   outline: none;
   opacity: 0.9;
 }
 
-label {
+.form-label {
   color: var(--secondaryFontColor);
   font-size: 0.9rem;
   font-weight: normal;
@@ -67,9 +72,13 @@ label {
   top: 15px;
 }
 
+.form-label-image {
+  top: -2rem;
+}
+
 /* active state */
-input:focus ~ label,
-input:valid ~ label {
+.form-control:focus ~ label,
+.form-control:valid ~ label {
   top: -1rem;
   font-size: 0.9rem;
   color: var(--secondaryFontColor);
@@ -87,7 +96,7 @@ input:valid ~ label {
 }
 
 /* active state */
-.form-input:focus ~ .highlight {
+.form-control:focus ~ .highlight {
   -webkit-animation: inputHighlighter 0.3s ease;
   -moz-animation: inputHighlighter 0.3s ease;
   animation: inputHighlighter 0.3s ease;
@@ -146,9 +155,9 @@ input:valid ~ label {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(1fr, 2fr));
   gap: 2rem;
-  margin: 4rem 5vw;
+  margin: 2rem 5vw;
   padding: 0;
   list-style-type: none;
 }
@@ -158,9 +167,9 @@ input:valid ~ label {
   display: block;
   height: 100%;
   width: 20%;
-  border-radius: 1rem;
   overflow: hidden;
   text-decoration: none;
+  box-shadow: 0.6rem 0.6rem 0 #242223;
 }
 
 .card__image {
@@ -175,7 +184,7 @@ input:valid ~ label {
   right: 0;
   z-index: 1;
   transform: translateY(100%);
-  transition: 0.2s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 .card:hover .card__overlay {
@@ -187,9 +196,7 @@ input:valid ~ label {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  border-top-left-radius: 2rem;
-  background-color: white;
+  background-color: rgba(36, 34, 35, 0.8);
   transform: translateY(-100%);
   transition: 0.1s ease-in-out;
 }
@@ -201,12 +208,12 @@ input:valid ~ label {
 .card__title {
   font-size: 1em;
   margin: 0;
-  color: black;
+  color: white;
 }
 
 .card__status {
   font-size: 0.8em;
-  color: black;
+  color: white;
 }
 
 .card__header-text {
@@ -219,10 +226,10 @@ input:valid ~ label {
 .card__description {
   padding: 0 1rem;
   margin: 0;
-  color: black;
+  color: white;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  background-color: white;
+  background-color: rgba(36, 34, 35, 0.8);
   font-size: 0.8rem;
 }
 
@@ -230,8 +237,32 @@ input:valid ~ label {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-color: white;
+  background-color: rgba(36, 34, 35, 0.8);
   font-family: "Barlow", sans-serif;
   border: none;
   margin: 0;
+}
+
+.btn-edit {
+  background: none;
+  border: none;
+  color: white;
+}
+
+.btn-delete {
+  background: none;
+  border: none;
+  color: white;
+}
+
+.btn-edit:hover {
+  cursor: pointer;
+  font-size: 2rem;
+  transition: 400ms ease-out;
+}
+
+.btn-delete:hover {
+  cursor: pointer;
+  font-size: 2rem;
+  transition: 400ms ease-out;
 }

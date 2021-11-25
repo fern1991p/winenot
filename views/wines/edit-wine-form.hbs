@@ -1,12 +1,13 @@
- <div class="form">
-    <p>Edit your wine</p>
+ <div class="wine-form edit">
+    <p class="add-wine">Edit your wine</p>
 <form action="/profile/{{oneWine._id}}/edit" method="POST" enctype="multipart/form-data">
   
   
     <div class="group"> 
+    <label class="form-label-image">Your image</label>
     <input type="file" name="image" id="image-input" accept="image/png, image/jpg" value="{{oneWine.image}}"></input>
   
-    <label class="form-label">Your image</label>
+    
     </div>
     
     <div class="group"> 
@@ -50,7 +51,23 @@
     </div>
 
  
-  <button class="add-btn" type="submit">Add</button>
+  <button class="add-btn" type="submit">Edit</button>
 </form>
 
 </div>
+
+
+{{!-- <div class="container">
+  <div class="interior">
+    <a class="btn" href="#open-modal">👋 Basic CSS-Only Modal</a>
+  </div>
+</div>
+<div id="open-modal" class="modal-window">
+  <div>
+    <a href="#" title="Close" class="modal-close">Close</a>
+    <h1>Voilà!</h1>
+    <div>A CSS-only modal based on the :target pseudo-class. Hope you find it helpful.</div>
+    <div><small>Check out</small></div>
+    <a href="https://aminoeditor.com" target="_blank">👉 Amino: Live CSS Editor for Chrome</div>
+    </div>
+</div> --}}

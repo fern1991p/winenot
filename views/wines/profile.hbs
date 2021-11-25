@@ -34,8 +34,8 @@
 
 <div class="container">
   
-  <div class="form">
-    <p>Add your wine</p>
+  <div class="wine-form">
+    <p class="add-wine">Add your wine</p>
 <form action="/profile" method="POST" enctype="multipart/form-data">
   
   
@@ -82,7 +82,7 @@
     <div class="group"> 
     <input class="form-control"  type="text" name="comment"/>
     <span class="highlight"></span>
-   <label class="form-label">Where to buy?</label>
+   <label class="form-label">Extra comments</label>
     </div>
 
  
@@ -110,14 +110,14 @@
              <span class="card__status">${{this.price}} </span>
           </div>
         </div>
-        <p class="card__description">Matches to: {{this.matches}}</p>
-        <p class="card__description">Comment: {{this.comment}}</p>
+        <p class="card__description">Matches to {{this.matches}}</p>
+        <p class="card__description"> {{this.comment}}</p>
          <div class="buttons">
         <form action="/profile/{{this._id}}/edit" method="GET">
-        <button type="submit" class="btn btn-warning"><i class="far fa-edit"></i></button>
+        <button type="submit" class="btn btn-edit"><i class="far fa-edit"></i></button>
         </form>
         <form action="/profile/{{this._id}}/delete" method="GET">
-        <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+        <button class="btn btn-delete"><i class="far fa-trash-alt"></i></button>
        </form>
         </div>
       </div>
