@@ -38,20 +38,20 @@
 </div>
 
 <section class="card-container">
-  <ul class="cards">
+  <ul class="cards collection">
     {{#each wines}}
-      <li class="card-wine">
+      <li>
 
         <img src="{{this.imageUrl}}" class="card__image" alt="" />
         <div class="card__overlay">
           <div class="card__header">
             <div class="card__header-text">
-              <h3 class="card__title random">{{this.title}}</h3>
+              <h3 class="card__title">{{this.title}}</h3>
 
-              <span class="card__status random">{{this.price}} </span>
+              <span class="card__status">{{this.price}} </span>
             </div>
           </div>
-          <a href="{{this.link}}" class="card__description random">Buy here</a>
+          <a href="{{this.link}}" class="card__description">Buy here</a>
         </div>
       </li>
     {{/each}}
