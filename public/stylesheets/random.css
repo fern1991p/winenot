@@ -18,4 +18,11 @@ letter-spacing: 3px;
 img{
     opacity: 0.8;
 }
-
+.centeredAPI {
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 500px;
+    /* struggle to make it center. careful w margin */
+  }

@@ -24,15 +24,30 @@
   <button type="submit" class="random button-52 randomcenter">Surprise me</button>
 </form>
 
+
+<div class="centeredAPI">
+    <ul class="cards">
 {{#each wines}}
+ <li class="card">
+    
+      <img src="{{this.imageUrl}}" class="card__image" alt="" />
+      <div class="card__overlay">
+        <div class="card__header">
+          <div class="card__header-text">
+            <h3 class="card__title">{{this.title}}</h3>            
+            {{!-- <span class="card__status">RAAAAAating: {{this.ratingCount}}/10</span> --}}
+             <span class="card__status">{{this.price}} </span>
+          </div>
+        </div>
 
-  <img src="{{this.imageUrl}}" />
-  <h3>{{this.title}}</h3>
-  <span>{{this.price}}</span>
-  <span>{{this.description}} </span>
-  <span>{{this.ratingCount}} </span>
-  <a href="{{this.link}}">Buy </a>
+        <p class="card__description">{{this.description}}</p>
+        {{!-- <p class="card__description"><a href="{{this.link}}">Buy </a></p>  --}}
+        
+       </div>
+          
+  </li>
+    {{/each}}
+  </ul>
 
-{{/each}}
-
+</div>
 </body>
