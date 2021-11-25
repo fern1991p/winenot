@@ -171,6 +171,7 @@ a:hover {
 
 .title-collection {
   background: white;
+  opacity: 0.9;
   color: var(--primaryColor);
   display: flex;
   justify-content: flex-start;
@@ -510,3 +511,17 @@ p {
     top: -200px;
   }
 }
+
+
+/*--------------------------------------------
+ * ERROR PAGE
+ ---------------------------------------------*/
+
+ .error-bg {
+  background-image: url("/images/error.jpg");
+  background-color: #cccccc;
+ }
+ .notfound-bg {
+  background-image: url("/images/error1.jpg");
+  background-color: #cccccc;
+ }

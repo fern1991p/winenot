@@ -1,0 +1,21 @@
+.random-bg {
+    background-image: url("/images/wine3.png");
+    background-color: #cccccc;
+   }
+
+.randomcenter {
+left: 510px;
+/* top: 130px; */
+letter-spacing: 3px;
+}
+
+#logo{
+    width: 60px;
+    height: 50px;
+    margin-left: 20px;
+    margin-top: 20px;;
+}
+img{
+    opacity: 0.8;
+}
+

@@ -9,6 +9,7 @@ const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
+const highlightElement = document.querySelector(".highlight")
 const answerButtonsElement = document.getElementById('answer-buttons')
 // Wine path
 const merlotButton = document.getElementById('merlot-btn')
@@ -61,11 +62,12 @@ function setNextQuestion() {
   showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 function showQuestion(question) {
-  questionElement.innerText = question.question
+  highlightElement.innerText = question.question
   question.answers.forEach(answer => {
     const button = document.createElement('button')
     button.innerText = answer.text
     button.classList.add('btn')
+    button.classList.add('button-2')
     if (answer.correct) {
       button.dataset.correct = answer.correct
     }

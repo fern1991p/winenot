@@ -1,9 +1,18 @@
+<body class="quiz-bg"> 
 <h1 class="title-collection">
-this works, but needs to be updated with the recent card wine
+Your perfect wine is: 
 </h1>
 
-<h2>
-  {{wine.title}}
+
+
+  <img src="{{wine.imageUrl}}" />
+  <h3>{{wine.title}}</h3>
+  <span>{{wine.price}}</span>
+  <span>{{wine.description}} </span>
+  <span>{{wine.ratingCount}} </span>
+  <a href="{{wine.link}}">Buy </a>
+
+
 </h2>
 <div class="landing"> 
 <nav role="navigation">
@@ -22,3 +31,4 @@ this works, but needs to be updated with the recent card wine
   </div>
 </nav>
 </div>
+</body>
