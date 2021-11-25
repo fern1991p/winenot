@@ -1,5 +1,16 @@
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit your wine</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
  <div class="wine-form edit">
-    <p class="add-wine">Edit your wine</p>
+   
 <form action="/profile/{{oneWine._id}}/edit" method="POST" enctype="multipart/form-data">
   
   
@@ -29,7 +40,7 @@
       <option value="Sweet">Sweet</option>
 
     </select>
-    
+    </div>
 </div>
     
     <div class="group"> 
@@ -47,27 +58,19 @@
     <div class="group"> 
     <input class="form-control"  type="text" name="comment" value="{{oneWine.comment}}"/>
     <span class="highlight"></span>
-   <label class="form-label">Where to buy?</label>
+   <label class="form-label">Extra comments</label>
     </div>
 
- 
-  <button class="add-btn" type="submit">Edit</button>
+{{!--  
+  <button class="add-btn" type="submit">Edit</button> --}}
 </form>
 
-</div>
-
-
-{{!-- <div class="container">
-  <div class="interior">
-    <a class="btn" href="#open-modal">👋 Basic CSS-Only Modal</a>
+      </div>
+      <div class="modal-footer">
+    
+        <button type="submit" class="btn btn-primary add-btn">Edit</button>
+      </div>
+    </div>
   </div>
 </div>
-<div id="open-modal" class="modal-window">
-  <div>
-    <a href="#" title="Close" class="modal-close">Close</a>
-    <h1>Voilà!</h1>
-    <div>A CSS-only modal based on the :target pseudo-class. Hope you find it helpful.</div>
-    <div><small>Check out</small></div>
-    <a href="https://aminoeditor.com" target="_blank">👉 Amino: Live CSS Editor for Chrome</div>
-    </div>
-</div> --}}
+

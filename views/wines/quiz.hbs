@@ -1,48 +1,59 @@
-<body class="quiz-bg"> 
-<h1 class="title-collection">
-Perfect Wines. Perfectly Matched For You.
-</h1>
+<body class="quiz-bg">
+  <h1 class="title-collection">
+    Perfect Wines. Perfectly Matched For You.
+  </h1>
 
-<div class="landing"> 
-<nav role="navigation">
-  <div id="menuToggle">
-    <input type="checkbox" />
-    <span></span>
-    <span></span>
-    <span></span>
-    <ul id="menu">
-      <a href="/logout"><li>Log out</li></a>
-      <a href="/profile"><li>My collection</li></a>      
-      <a href="/quiz"><li>Quiz</li></a>
-      <a href="/collection"><li>Our collection</li></a>
-      <a href="/random-wine"><li>Random Wine</li></a>
-     </ul>
+  <div class="landing">
+    <nav role="navigation">
+      <div id="menuToggle">
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+          <a href="/logout"><li>Log out</li></a>
+          <a href="/profile"><li>My collection</li></a>
+          <a href="/quiz"><li>Quiz</li></a>
+          <a href="/collection"><li>Wine collection</li></a>
+          <a href="/random-wine"><li>Random Wine</li></a>
+        </ul>
+      </div>
+    </nav>
   </div>
-</nav>
-</div>
 
-<div>
-  <div id="question-container" class="hide">
-    <div class="centered" id="question">
-      <h1><span class="highlightQuiz"> Question </span></h1>
-        </div>
-    <div id="answer-buttons" class="btn-grid">
-      <button class="btn button-2">Answer 1</button>
-      <button class="btn">Answer 1</button>
-      <button class="btn">Answer 2</button>
-      <button class="btn">Answer 3</button>
-      <button class="btn">Answer 4</button>
+  <div>
+    <div id="question-container" class="hide">
+      <div class="centered" id="question">
+        <h1><span class="highlightQuiz"> Question </span></h1>
+      </div>
+      <div id="answer-buttons" class="btn-grid">
+        <button class="btn button-2">Answer 1</button>
+        <button class="btn">Answer 1</button>
+        <button class="btn">Answer 2</button>
+        <button class="btn">Answer 3</button>
+        <button class="btn">Answer 4</button>
+      </div>
+    </div>
+    <div class="controls">
+      <button id="start-btn" class="start-btn btn button-52">Start</button>
+      <a href="/quizresult/merlot"><button
+          id="merlot-btn"
+          class="start-btn btn hide button-53"
+        >See result</button></a>
+      <a href="/quizresult/pinot"><button
+          id="pinotn-btn"
+          class="start-btn btn hide button-53"
+        >See result</button></a>
+      <a href="/quizresult/chardonnay"><button
+          id="pinotg-btn"
+          class="start-btn btn hide button-53"
+        >See result</button></a>
+      <a href="/quizresult/sauvignon"><button
+          id="sauv-btn"
+          class="start-btn btn hide button-53"
+        >See result</button></a>
+      <button id="next-btn" class="next-btn btn button-2 hide">Next</button>
     </div>
   </div>
-  <div class="controls">
-    <button id="start-btn" class="start-btn btn button-52">Start</button>
-    <a href="/quizresult/merlot"><button id="merlot-btn" class="start-btn btn hide button-53">See result</button></a>
-    <a href="/quizresult/pinot"><button id="pinotn-btn" class="start-btn btn hide button-53">See result</button></a>
-    <a href="/quizresult/chardonnay"><button id="pinotg-btn" class="start-btn btn hide button-53">See result</button></a>
-    <a href="/quizresult/sauvignon"><button id="sauv-btn" class="start-btn btn hide button-53">See result</button></a>
-    <button id="next-btn" class="next-btn btn button-2 hide">Next</button>
-  </div>
-</div>
-      
-     
+
 </body>

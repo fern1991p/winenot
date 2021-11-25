@@ -31,16 +31,17 @@ router.get("/profile/:id/edit", (req, res, next) => {
     .catch((err) => console.log("Err while getting one wines: ", err));
 });
 
-router.post("/profile/:id/edit", (req, res, next) => {
+router.post("/profile/:id/edit", uploader.single("image"), (req, res, next) => {
   const { id } = req.params;
-  const { image, name, sweetness, price, matches, comment } = req.body;
+  const { name, sweetness, price, matches, comment } = req.body;
 
+  let image = req.file.path;
   Wine.findByIdAndUpdate(
     id,
     { image, name, sweetness, price, matches, comment },
     { new: true }
   )
-    .then(() => {
+    .then((updatedUser) => {
       res.redirect("/profile");
     })
     .catch((err) => console.log("Err while editing a wine: ", err));
@@ -56,7 +57,5 @@ router.get("/profile/:id/delete", (req, res, next) => {
     })
     .catch((err) => console.log("Err while deleting a wine: ", err));
 });
-
-
 
 module.exports = router;
