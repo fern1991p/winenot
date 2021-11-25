@@ -40,6 +40,7 @@ QUIZ
   padding: 13px 20px 13px;
   outline: 0;
   border: 1px solid black;
+  border-radius: none;
   cursor: pointer;
   position: relative;
   background-color: rgba(0, 0, 0, 0);
@@ -260,17 +261,12 @@ QUIZ
 .hide {
     display: none;
   }
-
  .centered {
     padding-top: 1px;
     text-align: center;
     letter-spacing: 3px;
     font-size: 25px;   
  }
-
-
-
-
  .quiz-bg {
     background-image: url("/images/corks.png");
     background-color: #cccccc;
@@ -281,5 +277,5 @@ QUIZ
     background-size: 100% 40%;
     background-position: 0 90%;
 }
- /* CSS QUESTIONS */
+
 
