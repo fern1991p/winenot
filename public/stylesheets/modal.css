@@ -1,0 +1,26 @@
+.modal {
+  border: none;
+}
+.modal-dialog {
+  background: none;
+}
+.modal-content {
+  background: var(--primaryColor);
+  color: var(--secondaryFontColor);
+  border-bottom: none;
+}
+
+.modal-body .wine-form {
+  background: var(--primaryColor);
+  color: var(--secondaryFontColor);
+  box-shadow: none;
+  padding: 0;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.modal-header {
+  border-bottom: none;
+}

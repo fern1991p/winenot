@@ -94,13 +94,13 @@
 
  
 
-
+{{!-- WINECARD --}}
 
 <section class="card-container">
     <ul class="cards">
 {{#each wineCollection}}
- <li>
-    <a href="" class="card">
+ <li class="card">
+   
       <img src="{{this.image}}" class="card__image" alt="" />
       <div class="card__overlay">
         <div class="card__header">
@@ -113,15 +113,99 @@
         <p class="card__description">Matches to {{this.matches}}</p>
         <p class="card__description"> {{this.comment}}</p>
          <div class="buttons">
-        <form action="/profile/{{this._id}}/edit" method="GET">
-        <button type="submit" class="btn btn-edit"><i class="far fa-edit"></i></button>
-        </form>
+
+     
+
+        
+        <button type="submit" class="btn btn-primary btn-edit" data-bs-toggle="modal" data-bs-target="#exampleModal{{@index}}"><i class="far fa-edit"></i></button>
+  
+     
+       
+
         <form action="/profile/{{this._id}}/delete" method="GET">
         <button class="btn btn-delete"><i class="far fa-trash-alt"></i></button>
        </form>
+
+
+
         </div>
       </div>
-    </a>      
+      
+      
+      <div class="modal fade" id="exampleModal{{@index}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit your wine</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body wine-form ">
+        
+ <div class="wine-form">
+   
+<form action="/profile/{{this._id}}/edit" method="POST" enctype="multipart/form-data">
+  
+  
+    <div class="group"> 
+    <label class="form-label-image">Your image</label>
+    <input type="file" name="image" id="image-input" accept="image/png, image/jpg" value="{{this.image}}"></input>
+  
+    
+    </div>
+    
+    <div class="group"> 
+    <input class="form-control"  type="text" name="name" value="{{this.name}}" />
+    <span class="highlight"></span>
+    <label class="form-label">Name of wine</label>
+    </div>
+
+
+    <div class="group">
+    
+    <label id="sweetness-label" class="form-label">Sweetness</label>
+     
+    <select name="sweetness" id="sweetness" value="{{this.sweetness}}">
+
+      <option value="Dry">Dry</option>
+      <option value="Half dry">Half dry</option>
+      <option value="Medium sweet">Medium sweet</option>
+      <option value="Sweet">Sweet</option>
+
+    </select>
+    </div>
+</div>
+    
+    <div class="group"> 
+    <input class="form-control"  type="text" name="price" value="{{this.price}}"/>
+    <span class="highlight"></span>
+    <label class="form-label">Price</label>
+    </div>
+
+    <div class="group"> 
+    <input class="form-control"  type="text" name="matches" value="{{this.matches}}"/>
+    <span class="highlight"></span>
+    <label class="form-label">Matches to</label>
+    </div>
+
+    <div class="group"> 
+    <input class="form-control"  type="text" name="comment" value="{{this.comment}}"/>
+    <span class="highlight"></span>
+   <label class="form-label">Extra comments</label>
+    </div>
+ <div class="modal-footer">
+    
+        <button type="submit" class=" add-btn">Edit</button>
+      </div>
+{{!--  
+  <button class="add-btn" type="submit">Edit</button> --}}
+</form>
+
+      </div>
+     
+    </div>
+  </div>
+</div>
+
   </li>
     {{/each}}
   </ul>

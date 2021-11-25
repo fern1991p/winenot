@@ -170,6 +170,7 @@
   overflow: hidden;
   text-decoration: none;
   box-shadow: 0.6rem 0.6rem 0 #242223;
+  border: none;
 }
 
 .card__image {
@@ -256,6 +257,7 @@
 }
 
 .btn-edit:hover {
+  background: none;
   cursor: pointer;
   font-size: 2rem;
   transition: 400ms ease-out;
@@ -265,4 +267,6 @@
   cursor: pointer;
   font-size: 2rem;
   transition: 400ms ease-out;
+  color: white;
+  background: none;
 }
