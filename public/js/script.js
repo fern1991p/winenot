@@ -9,7 +9,7 @@ const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
-const highlightElement = document.querySelector(".highlight")
+const highlightElement = document.querySelector(".highlightQuiz")
 const answerButtonsElement = document.getElementById('answer-buttons')
 // Wine path
 const merlotButton = document.getElementById('merlot-btn')

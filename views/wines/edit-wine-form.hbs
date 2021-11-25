@@ -1,69 +1,73 @@
-<form action="/profile/{{oneWine._id}}/edit" method="POST">
-  <label for="wine">Edit your wine:</label>
+ <div class="wine-form edit">
+    <p class="add-wine">Edit your wine</p>
+<form action="/profile/{{oneWine._id}}/edit" method="POST" enctype="multipart/form-data">
+  
+  
+    <div class="group"> 
+    <label class="form-label-image">Your image</label>
+    <input type="file" name="image" id="image-input" accept="image/png, image/jpg" value="{{oneWine.image}}"></input>
+  
+    
+    </div>
+    
+    <div class="group"> 
+    <input class="form-control"  type="text" name="name" value="{{oneWine.name}}" />
+    <span class="highlight"></span>
+    <label class="form-label">Name of wine</label>
+    </div>
 
-  <div class="mb-3">
-    <label class="form-label">Your image:</label>
-    <input
-      class="form-control"
-      placeholder="Name"
-      type="text"
-      name="image"
-      value="{{oneWine.image}}"
-    />
-    <br/>
-    <label class="form-label">Name of wine:</label>
-    <input
-      class="form-control"
-      placeholder="Name"
-      type="text"
-      name="name"
-      value="{{oneWine.name}}"
-    />
-    <br />
-    <label class="form-label">Sweetness:</label>
-    <select
-      name="sweetness"
-      id="sweetness"
-      value="{{oneWine.sweetness}}"
-      multiple
-    >
 
-      <option value="dry">Dry</option>
-      <option value="medium-dry">Medium dry</option>
-      <option value="medium-sweet">Medium sweet</option>
-      <option value="sweet">Sweet</option>
+    <div class="group">
+    
+    <label id="sweetness-label" class="form-label">Sweetness</label>
+     
+    <select name="sweetness" id="sweetness" value="{{oneWine.sweetness}}">
+
+      <option value="Dry">Dry</option>
+      <option value="Half dry">Half dry</option>
+      <option value="Medium sweet">Medium sweet</option>
+      <option value="Sweet">Sweet</option>
 
     </select>
+    
+</div>
+    
+    <div class="group"> 
+    <input class="form-control"  type="text" name="price" value="{{oneWine.price}}"/>
+    <span class="highlight"></span>
+    <label class="form-label">Price</label>
+    </div>
 
-    <br />
-    <label class="form-label">Price:</label>
-    <input
-      class="form-control"
-      placeholder="How much was it?"
-      type="text"
-      name="price"
-      value="{{oneWine.price}}"
-    />
-    <br />
-    <label class="form-label">Match:</label>
-    <input
-      class="form-control"
-      placeholder="Matches to..."
-      type="text"
-      name="matches"
-      value="{{oneWine.matches}}"
-    />
-    <br />
-    <label class="form-label">Comments:</label>
-    <input
-      class="form-control"
-      placeholder="Where you bought it ...?"
-      type="text"
-      name="comment"
-      value="{{oneWine.comment}}"
-    />
-    <br />
+    <div class="group"> 
+    <input class="form-control"  type="text" name="matches" value="{{oneWine.matches}}"/>
+    <span class="highlight"></span>
+    <label class="form-label">Matches to</label>
+    </div>
 
-  </div>
-  <button type="submit" class="btn btn-warning">Edit</button>
+    <div class="group"> 
+    <input class="form-control"  type="text" name="comment" value="{{oneWine.comment}}"/>
+    <span class="highlight"></span>
+   <label class="form-label">Where to buy?</label>
+    </div>
+
+ 
+  <button class="add-btn" type="submit">Edit</button>
 </form>
+
+</div>
+
+
+{{!-- <div class="container">
+  <div class="interior">
+    <a class="btn" href="#open-modal">👋 Basic CSS-Only Modal</a>
+  </div>
+</div>
+<div id="open-modal" class="modal-window">
+  <div>
+    <a href="#" title="Close" class="modal-close">Close</a>
+    <h1>Voilà!</h1>
+    <div>A CSS-only modal based on the :target pseudo-class. Hope you find it helpful.</div>
+    <div><small>Check out</small></div>
+    <a href="https://aminoeditor.com" target="_blank">👉 Amino: Live CSS Editor for Chrome</div>
+    </div>
+</div> --}}

@@ -5,16 +5,16 @@ var bcrypt = require("bcryptjs");
 
 let loggedInUser = {};
 
-//sign in handlebar
+
 router.get("/signin", (req, res, next) => {
   res.render("auth/signin.hbs");
 });
-//signup handlebar
+
 router.get("/signup", (req, res, next) => {
   res.render("auth/signup.hbs");
 });
 
-//get data!
+
 router.post("/signup", (req, res, next) => {
   const { name, email, password } = req.body;
 
@@ -22,13 +22,12 @@ router.post("/signup", (req, res, next) => {
     res.render("auth/signup.hbs", { error: "Please enter all fields" });
     return;
   }
-  //add email and password validation (do when finish testing)
-  //regex - need to REQUIRE! Done! Install. Done! Password is hashed now. Please remember password, fernanda
+ 
   var salt = bcrypt.genSaltSync(10);
 
   var hash = bcrypt.hashSync(password, salt);
 
-  //create the data in my mongoose. Check? Done.
+
   UserModel.create({ name, email, password: hash })
     .then(() => {
       res.redirect("/signin");
@@ -38,23 +37,19 @@ router.post("/signup", (req, res, next) => {
     });
 });
 
-//sign in and redirect to HD
-// VALIDADE
+
 router.post("/signin", (req, res, next) => {
   const { email, password } = req.body;
 
-  ///.FIND IS A ARRAY
   UserModel.find({ email })
     .then((emailResponse) => {
       if (emailResponse.length) {
         let userObj = emailResponse[0];
-        // its an array
         let DoesitMatch = bcrypt.compareSync(password, userObj.password);
 
         if (DoesitMatch) {
           req.session.myProperty = userObj;
           res.redirect("/profile");
-          //needs to change it!
         } else {
           res.render("auth/signin.hbs", { error: "Password not matching" });
 
@@ -78,13 +73,11 @@ const checkLogIn = (req, res, next) => {
   }
 };
 
-//private handlebars... to be created
-
 router.get("/profile", checkLogIn, (req, res, next) => {
   let myUserInfo = req.session.myProperty;
   const user = req.session.myProperty._id;
   Wine.find({ user }).then((wineCollection) => {
-    res.render("wines/wine-collection.hbs", {
+    res.render("wines/profile.hbs", {
       name: myUserInfo,
       wineCollection,
     });
@@ -93,8 +86,6 @@ router.get("/profile", checkLogIn, (req, res, next) => {
 });
 
 router.get("/logout", (req, res, next) => {
-  // Deletes the session
-  // this will also automatically delete the session from the DB
   req.session.destroy();
   res.redirect("/");
 });
@@ -103,12 +94,6 @@ router.get("/logout", (req, res, next) => {
 router.get("/quiz", (req, res, next) => {
   res.render("wines/quiz.hbs");
 });
-
-// fern changes
-
-
-//hereeeeeeeeee
-
 
 router.get("/pinotn-result", (req, res, next) => {
   res.render("quizResult/pinotn-result.hbs");

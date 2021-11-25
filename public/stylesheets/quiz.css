@@ -12,14 +12,6 @@ QUIZ
     justify-content: center;
   
   }
-.container {
-    padding-top: 60px;
-    background-color: darkgrey;
-    opacity: 0.85;
-    border-radius: 5px;
-    box-shadow: 0 0 10px 2px;
-  
-  }
 .btn-grid{
     display: flex;
     justify-content: center;
@@ -280,7 +272,7 @@ QUIZ
     background-image: url("/images/corks.png");
     background-color: #cccccc;
    }
-.highlight {
+.highlightQuiz{
     background: linear-gradient(120deg, #e4a0a1 0%, #e4a0a1 100%);
     background-repeat: no-repeat;
     background-size: 100% 40%;

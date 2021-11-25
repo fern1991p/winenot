@@ -1,12 +1,163 @@
+.container {
+  display: flex;
+}
+/*--------------------------------------------
+ * FORM
+ ---------------------------------------------*/
+
+.wine-form {
+  background: var(--primaryColor);
+  color: var(--secondaryFontColor);
+  padding: 0.6rem 2.7rem 0.6rem 2rem;
+  box-shadow: 0.5rem 1rem 1.2rem rgb(15, 15, 15, 0.6);
+}
+.add-wine {
+  letter-spacing: 0.07rem;
+  font-size: 1.2rem;
+}
+
+.wine-form .edit {
+  display: flex;
+  justify-content: center;
+}
+
+#image-input {
+  background: var(--primaryColor);
+  color: var(--secondaryFontColor);
+  opacity: 0.9;
+}
+
+.group {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+#sweetness {
+  color: white;
+  background: var(--primaryColor);
+  opacity: 0.9;
+}
+#sweetness-label {
+  top: -1.9rem;
+  opacity: 0.9;
+}
+
+.form-control {
+  font-size: 0.8rem;
+  height: 2rem;
+  padding: 1rem 3rem 1rem 0.5rem;
+  display: block;
+  width: 14rem;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid white;
+  color: var(--secondaryFontColor);
+  background: rgba(0, 0, 0, 0);
+  opacity: 0.9;
+  transition: 0.2s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  opacity: 0.9;
+}
+
+.form-label {
+  color: var(--secondaryFontColor);
+  font-size: 0.9rem;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 15px;
+}
+
+.form-label-image {
+  top: -2rem;
+}
+
+/* active state */
+.form-control:focus ~ label,
+.form-control:valid ~ label {
+  top: -1rem;
+  font-size: 0.9rem;
+  color: var(--secondaryFontColor);
+  opacity: 0.9;
+}
+
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 50px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+/* active state */
+.form-control:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: #b1b1b1;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@-moz-keyframes inputHighlighter {
+  from {
+    background: #b1b1b1;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@keyframes inputHighlighter {
+  from {
+    background: #b1b1b1;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+.add-btn {
+  background: none;
+  border: none;
+
+  margin-left: 12rem;
+  font-size: 1.2rem;
+  font-weight: 100;
+  letter-spacing: 0.07rem;
+  float: right;
+  color: #b1b1b1;
+  transition: 0.2s ease;
+}
+
+.add-btn:hover {
+  color: #fafafa;
+  cursor: pointer;
+}
+
 /*--------------------------------------------
  * WINE CARD
  ---------------------------------------------*/
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(1fr, 2fr));
   gap: 2rem;
-  margin: 4rem 5vw;
+  margin: 2rem 5vw;
   padding: 0;
   list-style-type: none;
 }
@@ -16,9 +167,9 @@
   display: block;
   height: 100%;
   width: 20%;
-  border-radius: 1rem;
   overflow: hidden;
   text-decoration: none;
+  box-shadow: 0.6rem 0.6rem 0 #242223;
 }
 
 .card__image {
@@ -33,7 +184,7 @@
   right: 0;
   z-index: 1;
   transform: translateY(100%);
-  transition: 0.2s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 .card:hover .card__overlay {
@@ -45,9 +196,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-  border-top-left-radius: 2rem;
-  background-color: white;
+  background-color: rgba(36, 34, 35, 0.8);
   transform: translateY(-100%);
   transition: 0.1s ease-in-out;
 }
@@ -59,12 +208,12 @@
 .card__title {
   font-size: 1em;
   margin: 0;
-  color: black;
+  color: white;
 }
 
 .card__status {
   font-size: 0.8em;
-  color: black;
+  color: white;
 }
 
 .card__header-text {
@@ -77,10 +226,10 @@
 .card__description {
   padding: 0 1rem;
   margin: 0;
-  color: black;
+  color: white;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  background-color: white;
+  background-color: rgba(36, 34, 35, 0.8);
   font-size: 0.8rem;
 }
 
@@ -88,10 +237,32 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-color: white;
+  background-color: rgba(36, 34, 35, 0.8);
   font-family: "Barlow", sans-serif;
   border: none;
   margin: 0;
 }
 
+.btn-edit {
+  background: none;
+  border: none;
+  color: white;
+}
 
+.btn-delete {
+  background: none;
+  border: none;
+  color: white;
+}
+
+.btn-edit:hover {
+  cursor: pointer;
+  font-size: 2rem;
+  transition: 400ms ease-out;
+}
+
+.btn-delete:hover {
+  cursor: pointer;
+  font-size: 2rem;
+  transition: 400ms ease-out;
+}
