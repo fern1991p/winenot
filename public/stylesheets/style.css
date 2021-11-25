@@ -2,12 +2,20 @@ body {
   margin: 0;
   padding: 0;
   background-image: url("/images/wine.jpeg");
-  color: #cdcdcd;
+
   font-family: "Barlow", sans-serif;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   overflow-x: hidden;
+  background-color: var(--bodyBackgroundColor);
+  color: var(--bodyColor);
+  font-family: var(--bodyFontFamily), var(--bodyFontFamilyFallback);
+  font-size: var(--bodyFontSize);
+  font-weight: var(--bodyFontWeight);
+  line-height: var(--bodyLineHeight);
+  margin: 0;
+  min-block-size: 100vh;
 }
 
 :root {
@@ -25,40 +33,23 @@ body {
   --loginSubmitHoverBackgroundColor: tomato;
   --baseColor: #606468;
   --iconFill: var(--baseColor);
-}
-:root {
   --htmlFontSize: 100%;
   --bodyBackgroundColor: #2c3338;
   --bodyColor: var(--baseColor);
-  --bodyFontFamily: "Open Sans";
-  --bodyFontFamilyFallback: sans-serif;
+  --bodyFontFamily: "Barlow", sans-serif;
+  --bodyFontFamilyFallback: "Barlow", sans-serif;
   --bodyFontSize: 0.875rem;
   --bodyFontWeight: 400;
   --bodyLineHeight: 1.5;
   --formGap: 0.875rem;
 }
 
-body {
-  background-color: var(--bodyBackgroundColor);
-  color: var(--bodyColor);
-  font-family: var(--bodyFontFamily), var(--bodyFontFamilyFallback);
-  font-size: var(--bodyFontSize);
-  font-weight: var(--bodyFontWeight);
-  line-height: var(--bodyLineHeight);
-  margin: 0;
-  min-block-size: 100vh;
-}
-
 a {
   text-decoration: none;
   color: #232323;
   transition: color 0.3s ease;
-}
-
-a {
   color: var(--anchorColor);
   outline: 0;
-  text-decoration: none;
 }
 
 a:hover {
@@ -510,16 +501,15 @@ p {
   }
 }
 
-
 /*--------------------------------------------
  * ERROR PAGE
  ---------------------------------------------*/
 
- .error-bg {
+.error-bg {
   background-image: url("/images/error.jpg");
   background-color: #cccccc;
- }
- .notfound-bg {
+}
+.notfound-bg {
   background-image: url("/images/error1.jpg");
   background-color: #cccccc;
- }
+}
