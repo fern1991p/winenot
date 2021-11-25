@@ -25,28 +25,36 @@
   </nav>
 </div>
 
-<div>
+<div class="filter-wines">
   <form action="/collection/white" method="POST">
-    <button type="submit" class="white-wines">White wines</button>
+    <button type="submit" class="singl-wine-btn white-wines">White wines</button>
   </form>
   <form action="/collection/red" method="POST">
-    <button type="submit" class="red-wines">Red wines</button>
+    <button type="submit" class="singl-wine-btn red-wines">Red wines</button>
   </form>
 
   <form action="/collection" method="POST">
-    <button type="submit" class="clear-wines">Clear</button>
+    <button type="submit" class="singl-wine-btn clear-wines">Clear</button>
   </form>
 </div>
 
-{{#each wines}}
+<section class="card-container">
+  <ul class="cards collection">
+    {{#each wines}}
+      <li>
 
-  <img src="{{this.imageUrl}}" />
-  <h3>{{this.title}}</h3>
-  <span>{{this.price}}</span>
-  <span>{{this.description}} </span>
-  <span>{{this.ratingCount}} </span>
-  <a href="{{this.link}}">Buy </a>
+        <img src="{{this.imageUrl}}" class="card__image" alt="" />
+        <div class="card__overlay">
+          <div class="card__header">
+            <div class="card__header-text">
+              <h3 class="card__title">{{this.title}}</h3>
 
-{{/each}}
-
-</body>
+              <span class="card__status">{{this.price}} </span>
+            </div>
+          </div>
+          <a href="{{this.link}}" class="card__description">Buy here</a>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+</section>

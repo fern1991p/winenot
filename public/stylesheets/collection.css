@@ -1,0 +1,35 @@
+.filter-wines {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1rem;
+}
+
+.singl-wine-btn {
+  background: none;
+  font-size: 1.3rem;
+  border: none;
+  color: white;
+  padding-right: 1rem;
+}
+
+.red-wines {
+  padding-left: 1rem;
+  border-left: white solid 1px;
+}
+
+.clear-wines {
+  padding-left: 25.5rem;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.cards .collection {
+  background: none;
+  font-size: 1.3rem;
+  width: 25%;
+  height: 100%;
+  text-align: center;
+}

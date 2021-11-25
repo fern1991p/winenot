@@ -1,28 +1,48 @@
 .random-bg {
-    background-image: url("/images/wine3.png");
-    background-color: #cccccc;
-   }
+  background-image: url("/images/wine3.png");
+  background-color: #cccccc;
+}
 
 .randomcenter {
-left: 510px;
-/* top: 130px; */
-letter-spacing: 3px;
+  left: 510px;
+  letter-spacing: 3px;
 }
 
-#logo{
-    width: 60px;
-    height: 50px;
-    margin-left: 20px;
-    margin-top: 20px;;
+#logo {
+  width: 60px;
+  height: 50px;
+  margin-left: 20px;
+  margin-top: 20px;
 }
-img{
-    opacity: 0.8;
+.random-container {
+  display: flex;
+  flex-direction: column;
 }
-.centeredAPI {
-    text-align: center;
-    display:flex;
-    justify-content: center;
-    flex-direction: column;
-    padding-left: 500px;
-    /* struggle to make it center. careful w margin */
-  }
+
+.cards .random {
+  background: none;
+  font-size: 1.3rem;
+  width: 25%;
+  height: 100%;
+  text-align: center;
+}
+
+.card__title .random {
+  font-size: 1.8rem;
+}
+
+.card__status .random {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.buy-wrapper {
+  background: rgba(36, 34, 35, 0.8);
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.6rem;
+}
+
+.card__description .random {
+  background: none;
+}

@@ -154,23 +154,24 @@
  ---------------------------------------------*/
 
 .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(1fr, 2fr));
-  gap: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  gap: 3rem;
   margin: 2rem 5vw;
   padding: 0;
   list-style-type: none;
 }
 
-.card {
+.card-wine {
   position: relative;
   display: block;
   height: 100%;
-  width: 20%;
+  width: 40%;
   overflow: hidden;
   text-decoration: none;
   box-shadow: 0.6rem 0.6rem 0 #242223;
   border: none;
+  border-radius: none;
 }
 
 .card__image {
@@ -188,7 +189,7 @@
   transition: 0.1s ease-in-out;
 }
 
-.card:hover .card__overlay {
+.card-wine:hover .card__overlay {
   transform: translateY(0);
 }
 
@@ -202,18 +203,18 @@
   transition: 0.1s ease-in-out;
 }
 
-.card:hover .card__header {
+.card-wine:hover .card__header {
   transform: translateY(0);
 }
 
 .card__title {
-  font-size: 1em;
+  font-size: 1.3rem;
   margin: 0;
   color: white;
 }
 
 .card__status {
-  font-size: 0.8em;
+  font-size: 1.1rem;
   color: white;
 }
 
@@ -231,7 +232,8 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   background-color: rgba(36, 34, 35, 0.8);
-  font-size: 0.8rem;
+  font-size: 1rem;
+  text-align: center;
 }
 
 .buttons {
@@ -248,12 +250,19 @@
   background: none;
   border: none;
   color: white;
+  font-size: 1.4rem;
+}
+
+.btn .btn-primary:hover {
+  background: none;
 }
 
 .btn-delete {
   background: none;
   border: none;
   color: white;
+  font-size: 1.4rem;
+  padding-top: 1.2rem;
 }
 
 .btn-edit:hover {

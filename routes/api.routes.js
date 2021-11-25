@@ -47,7 +47,7 @@ router.get("/random-wine/surprise", (req, res, next) => {
   ApiWine.find()
     .then((wines) => {
       res.render("wines/random-wine.hbs", {
-        wines: wines[Math.floor(Math.random() * wines.length)],
+        wine: wines[Math.floor(Math.random() * wines.length)],
       });
     })
     .catch((err) => {
@@ -55,44 +55,17 @@ router.get("/random-wine/surprise", (req, res, next) => {
     });
 });
 
-// router.post("/random-wine", (req, res, next) => {
-//   ApiWine.statics.random = async function () {
-//     const count = await this.count();
-//     const rand = Math.floor(Math.random() * count);
-//     const randomDoc = await this.findOne().skip(rand);
-//     return randomDoc;
-//   };
-// });
-
-
 router.get("/quizresult/:name", (req, res, next) => {
-    
-    ApiWine.findOne({title: {"$regex": req.params.name, $options: 'i'} })
-      .then((wine) => {
-      console.log(wine)
-      console.log("working")
+  ApiWine.findOne({ title: { $regex: req.params.name, $options: "i" } })
+    .then((wine) => {
+      console.log(wine);
+      console.log("working");
       res.render("quizResult/result.hbs", { wine });
     })
-    
-      .catch((err) => {
-        res.render("quizResult/result.hbs");
-      });
-    
-  }); 
 
-
-
-
-
+    .catch((err) => {
+      res.render("quizResult/result.hbs");
+    });
+});
 
 module.exports = router;
-
-// ApiWine.count().exec(function (err, count) {
-//   let random = Math.floor(Math.random() * count);
-//   ApiWine.findOne()
-//     .skip(random)
-//     .exec(function (err, result) {})
-//     .then((wines) => {
-//       res.render("/wines/random-wine.hbs", { wines });
-//};
-//     });
