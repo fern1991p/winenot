@@ -279,28 +279,3 @@
   color: white;
   background: none;
 }
-/*--------------------------------------------
- * Profile page
- ---------------------------------------------*/
-
- .title-collection {
-  background: white;
-  opacity: 0.9;
-  color: var(--primaryColor);
-  display: flex;
-  justify-content: flex-start;
-  padding: 2.5rem;
-  margin-left: 20rem;
-  margin-top: 4rem;
-  border-radius: 0.5rem;
-}
- 
-.profile-bg {
-  background-image: url("/images/random1.jpg");
-  background-color: #cccccc;
- } 
-
- .collection-bg {
-  background-image: url("/images/bg1.png");
-  background-color: #cccccc;
- }
