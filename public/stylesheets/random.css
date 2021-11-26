@@ -47,3 +47,20 @@
 .card__description .random {
   background: none;
 }
+
+.random-wine1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.cards-collection1 {
+  display: flex;
+}
+
+.my-card1 {
+  width: 400px;
+  height: 450px;
+  object-fit: contain;
+}

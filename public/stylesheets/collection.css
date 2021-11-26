@@ -32,3 +32,50 @@
   background-image: url("/images/bg1.png");
   background-color: #cccccc;
 }
+
+.cards-collection {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.each-card {
+  background-color: white;
+  display: block;
+  position: relative;
+}
+
+.my-card {
+  width: 300px;
+  height: 350px;
+  object-fit: contain;
+}
+
+.card__overlay1 {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  transform: translateY(100%);
+  transition: 0.2s ease-in-out;
+}
+
+.my-card:hover .card__overlay1 {
+  transform: translateY(0);
+}
+
+.card__header1 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(36, 34, 35, 0.8);
+  transform: translateY(-100%);
+  transition: 0.1s ease-in-out;
+}
+
+.my-card:hover .card__header1 {
+  transform: translateY(0);
+}

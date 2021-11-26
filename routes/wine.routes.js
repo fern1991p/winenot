@@ -7,9 +7,6 @@ const Wine = require("../models/Wine.model");
 // ------------------------------CREATE-----------------------------------
 
 //form in sidebar-toggle?
-router.get("/profile", (req, res, next) => {
-  res.render("wines/profile.hbs");
-});
 
 router.post("/profile", uploader.single("image"), (req, res, next) => {
   console.log("file is: ", req.file);
@@ -41,7 +38,7 @@ router.post("/profile/:id/edit", uploader.single("image"), (req, res, next) => {
     { image, name, sweetness, price, matches, comment },
     { new: true }
   )
-    .then((updatedUser) => {
+    .then(() => {
       res.redirect("/profile");
     })
     .catch((err) => console.log("Err while editing a wine: ", err));

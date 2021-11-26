@@ -28,7 +28,6 @@
 .wine-form-modal {
   background: var(--primaryColor);
   color: var(--secondaryFontColor);
-  padding: 1rem 0 0.6rem 3rem;
 
   margin-right: 3rem;
 }

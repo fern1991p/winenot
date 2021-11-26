@@ -27,7 +27,7 @@
   color: var(--secondaryFontColor);
   padding: 1rem 0 0.6rem 3rem;
   box-shadow: 0.5rem 1rem 1.2rem rgb(15, 15, 15, 0.6);
-  margin-right: 3rem;
+  border-radius: 0.5rem;
 }
 
 .add-wine {
@@ -148,7 +148,7 @@ input[type="file"] {
 .cards {
   display: flex;
   justify-content: flex-start;
-  gap: 2rem;
+  gap: 5rem;
   margin-left: 2rem;
   margin-top: 3rem;
   padding: 0;
@@ -159,7 +159,7 @@ input[type="file"] {
   position: relative;
   display: block;
   height: 100%;
-  width: 30%;
+  width: 20%;
   overflow: hidden;
   text-decoration: none;
   box-shadow: 0.6rem 0.6rem 0 #242223;
@@ -275,4 +275,41 @@ input[type="file"] {
 
 .btn-close {
   color: red;
+}
+
+.my-card2 {
+  height: 100%;
+}
+
+.form-label {
+  font-size: 25px !important;
+  top: -3rem !important;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 70px;
+}
+
+#sweetness {
+  font-size: 25px;
+  max-width: 200px;
+}
+
+.add-wine {
+  font-size: 30px;
+}
+
+.add-btn {
+  font-size: 30px;
+}
+
+.myModal {
+  font-size: 32px;
+}
+
+.myClose {
+  color: white;
 }
