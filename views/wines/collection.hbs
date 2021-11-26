@@ -1,72 +1,94 @@
 <body class="collection-bg">
-<h1 class="title-collection">
-  Wine Collection
-</h1>
+  <h1 class="title-collection">
+    Wine Collection
+  </h1>
 
-<div class="landing">
-  <nav role="navigation">
-    <div id="menuToggle">
+  <div class="landing">
+    <nav role="navigation">
+      <div id="menuToggle">
 
-      <input type="checkbox" />
+        <input type="checkbox" />
 
-      <span></span>
-      <span></span>
-      <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
 
-      <ul id="menu">
+        <ul id="menu">
 
-        <a href="/profile"><li>My collection</li></a>
-        <a href="/quiz"><li>Quiz</li></a>
-        <a href="/collection"><li>Wine collection</li></a>
-        <a href="/random-wine"><li>Surprise me!</li></a>
-        <a href="/logout"><li>Log out</li></a>
-      </ul>
-    </div>
-  </nav>
-</div>
+          <a href="/profile">
+            <li>My collection</li>
+          </a>
+          <a href="/quiz">
+            <li>Quiz</li>
+          </a>
+          <a href="/collection">
+            <li>All wines</li>
+          </a>
+          <a href="/random-wine">
+            <li>Surprise me!</li>
+          </a>
+          <a href="/logout">
+            <li>Log out</li>
+          </a>
+        </ul>
+      </div>
+    </nav>
+  </div>
 
-<div class="filter-wines">
-  <form action="/collection/white" method="POST">
-    <button type="submit" class="singl-wine-btn white-wines"><span class="highlightQuiz">White wines</span></button>
-  </form>
-  <form action="/collection/red" method="POST">
-    <button type="submit" class="singl-wine-btn red-wines"><span class="highlightQuiz">red wines</span></button>
-  </form>
+  <div class="filter-wines">
+    <form action="/collection/white" method="POST">
+      <button type="submit" class="singl-wine-btn white-wines">White wines</button>
+    </form>
+    <form action="/collection/red" method="POST">
+      <button type="submit" class="singl-wine-btn red-wines">Red wines</button>
+    </form>
 
-  <form action="/collection" method="POST">
-    <button type="submit" class="singl-wine-btn clear-wines"><span class="highlightQuiz">Clear</span></button>
-  </form>
-</div>
+    <form action="/collection" method="POST">
+      <button type="submit" class="singl-wine-btn clear-wines">Clear</button>
+    </form>
+  </div>
+  {{!--
+  <section class="card-container">
+    <ul class="cards collection">
+      {{#each wines}}
+      <li>
 
-<section class="random-container">
-  <ul class="cards">
-{{#each wines}}
-      {{!-- <li class="card-wine">
         <img src="{{this.imageUrl}}" class="card__image" alt="" />
         <div class="card__overlay">
           <div class="card__header">
             <div class="card__header-text">
               <h3 class="card__title">{{this.title}}</h3>
+
               <span class="card__status">{{this.price}} </span>
             </div>
           </div>
           <a href="{{this.link}}" class="card__description">Buy here</a>
         </div>
-      </li> --}}
-      <li class="card-wine random">
-          <img src="{{this.imageUrl}}" class="card__image" alt="" />
-          <div class="card__overlay">
-            <div class="card__header">
+      </li>
+      {{/each}}
+    </ul>
+  </section> --}}
+
+  <section class="card-container">
+    <ul class="cards cards-collection">
+      {{#each wines}}
+
+        <div class="each-card">
+          <img src="{{this.imageUrl}}" class="card__image my-card" alt="" />
+          <div class="card__overlay1">
+            <div class="card__header1">
               <div class="card__header-text">
-                <h3 class="card__title random">{{this.title}}</h3>
-                <span class="card__status random">{{this.price}} </span>
+                <h3 class="card__title">{{this.title}}</h3>
+                <span class="card__status">{{this.price}} </span>
               </div>
+              <a href="{{this.link}}" class="card__description">Buy here</a>
+
             </div>
-            <div class="buy-wrapper">
-              <a href="{{this.link}}" class="card__description random">Buy here </a>
-            </div>
+
           </div>
-        </li>
-    {{/each}}
-  </ul>
-</section>
+        </div>
+
+      {{/each}}
+    </ul>
+  </section>
+</body>

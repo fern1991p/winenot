@@ -4,28 +4,28 @@ Your perfect wine is:
 </h1>
 
 
+<section class="card-container random-wine1">
+    <ul class="cards cards-collection1">
+       {{#if wine}}
 
-    {{#if wine}}
-     
-      <ul class="cards random">
-
-        <li class="card-wine random">
-          <img src="{{wine.imageUrl}}" class="card__image" alt="" />
-          <div class="card__overlay">
-            <div class="card__header">
+        <div class="each-card">
+          <img src="{{wine.imageUrl}}" class="card__image my-card1" alt="" />
+          <div class="card__overlay1">
+            <div class="card__header1">
               <div class="card__header-text">
-                <h3 class="card__title random">{{wine.title}}</h3>
-                <span class="card__status random">{{wine.price}} </span>
+                <h3 class="card__title">{{wine.title}}</h3>
+                <span class="card__status">{{wine.price}} </span>
               </div>
-            </div>
-            <div class="buy-wrapper">
-              <a href="{{wine.link}}" class="card__description random">Buy here </a>
-            </div>
-          </div>
-        </li>
+              <a href="{{wine.link}}" class="card__description">Buy here</a>
 
-      </ul>
-    {{/if}}
+            </div>
+
+          </div>
+        </div>
+
+   {{/if}}
+    </ul>
+  </section>
 
 
 </h2>
@@ -37,11 +37,12 @@ Your perfect wine is:
     <span></span>
     <span></span>
     <ul id="menu">
-      <a href="/logout"><li>Log out</li></a>
+      
       <a href="/profile"><li>My collection</li></a>
       <a href="/quiz"><li>Quiz</li></a>
-      <a href="/collection"><li>Our collection</li></a>
-      <a href="/random-wine"><li>Random Wine</li></a>
+      <a href="/collection"><li>All wines</li></a>
+      <a href="/random-wine"><li>Surprise me!</li></a>
+      <a href="/logout"><li>Log out</li></a>
      </ul>
   </div>
 </nav>

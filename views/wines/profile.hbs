@@ -1,181 +1,195 @@
 <body class="profile-bg">
-<div class="landing"> 
-<nav role="navigation">
-  <div id="menuToggle">
-    <input type="checkbox" />
+  <div class="landing">
+    <nav role="navigation">
+      <div id="menuToggle">
+        <input type="checkbox" />
 
-    <span></span>
-    <span></span>
-    <span></span>
-  
-  <ul id="menu">
-      <a href="/profile"><li>My collection</li></a>
-      <a href="/quiz"><li>Quiz</li></a>
-      <a href="/collection"><li>Wine collection</li></a>
-      <a href="/random-wine"><li>Surprise me!</li></a>
-      <a href="/logout"><li>Log out</li></a>
-  </ul>
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <ul id="menu">
+          <a href="/profile">
+            <li>My collection</li>
+          </a>
+          <a href="/quiz">
+            <li>Quiz</li>
+          </a>
+          <a href="/collection">
+            <li>All wines</li>
+          </a>
+          <a href="/random-wine">
+            <li>Surprise me!</li>
+          </a>
+          <a href="/logout">
+            <li>Log out</li>
+          </a>
+        </ul>
+      </div>
+    </nav>
   </div>
-</nav>
-</div>
 
 
 
 
-<h1 class="title-collection">
- {{{name.name}}}'s collection
-</h1>
+  <h1 class="title-collection">
+    {{{name.name}}}'s collection
+  </h1>
 
 
-<div class="container-form-wine-card">
-  <div class="wine-form">
-    <p class="add-wine">Add your wine</p>
+  <div class="container-form-wine-card my-card2">
+    <div class="wine-form">
+      <p class="add-wine">Add wine</p>
       <form action="/profile" method="POST" enctype="multipart/form-data">
-        <div class="group"> 
+        <div class="group">
           <input type="file" name="image" id="image-input" accept="image/png, image/jpg"></input>
-          {{!-- <label class="form-label">Your image</label> --}}
         </div>
-        <div class="group"> 
-          <input class="form-control"  type="text" name="name" />
+        <div class="group">
+          <input class="form-control" type="text" name="name" />
           <span class="highlight"></span>
           <label class="form-label">Name of wine</label>
         </div>
         <div class="group">
           <label id="sweetness-label" class="form-label">Sweetness</label>
-            <select name="sweetness" id="sweetness">
-             <option value="Dry">Dry</option>
-             <option value="Half dry">Half dry</option>
-             <option value="Medium sweet">Medium sweet</option>
-             <option value="Sweet">Sweet</option>   
-           </select>
+          <select name="sweetness" id="sweetness">
+            <option value="Dry">Dry</option>
+            <option value="Half dry">Half dry</option>
+            <option value="Medium sweet">Medium sweet</option>
+            <option value="Sweet">Sweet</option>
+          </select>
         </div>
-    
-    <div class="group"> 
-    <input class="form-control"  type="text" name="price"/>
-    <span class="highlight"></span>
-    <label class="form-label">Price</label>
+
+        <div class="group">
+          <input class="form-control" type="text" name="price" />
+          <span class="highlight"></span>
+          <label class="form-label">Price</label>
+        </div>
+
+        <div class="group">
+          <input class="form-control" type="text" name="matches" />
+          <span class="highlight"></span>
+          <label class="form-label">Matches to</label>
+        </div>
+
+        <div class="group">
+          <input class="form-control" type="text" name="comment" />
+          <span class="highlight"></span>
+          <label class="form-label">Extra comments</label>
+        </div>
+
+
+        <button class="add-btn" type="submit">Add</button>
+      </form>
+
     </div>
 
-    <div class="group"> 
-    <input class="form-control"  type="text" name="matches"/>
-    <span class="highlight"></span>
-    <label class="form-label">Matches to</label>
-    </div>
-
-    <div class="group"> 
-    <input class="form-control"  type="text" name="comment"/>
-    <span class="highlight"></span>
-   <label class="form-label">Extra comments</label>
-    </div>
-
- 
-  <button class="add-btn" type="submit">Add</button>
-</form>
-
-</div>
 
 
- 
 
-{{!-- WINECARD --}}
+    {{!-- WINECARD --}}
 
-<section class="card-container">
-    <ul class="cards">
-{{#each wineCollection}}
- <li class="card-wine">
-   
-      <img src="{{this.image}}" class="card__image" alt="" />
-      <div class="card__overlay">
-        <div class="card__header">
-          <div class="card__header-text">
-            <h3 class="card__title">{{this.name}}</h3>            
-            <span class="card__status">{{this.sweetness}}</span>
-             <span class="card__status">${{this.price}} </span>
-          </div>
-        </div>
-        <p class="card__description">Matches to {{this.matches}}</p>
-        <p class="card__description"> {{this.comment}}</p>
-         
-          <div class="buttons">
-           <button type="submit" class="btn btn-primary btn-edit" data-bs-toggle="modal" data-bs-target="#exampleModal{{@index}}"><i class="far fa-edit"></i></button>
-           <form action="/profile/{{this._id}}/delete" method="GET">
-           <button class="btn btn-delete"><i class="far fa-trash-alt"></i></button>
-          </form>
-        </div>
-      </div>
-        <div class="modal fade" id="exampleModal{{@index}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-           <div class="modal-content">
-            <div class="modal-header">
-               <h5 class="modal-title" id="exampleModalLabel">Edit your wine</h5>
-               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <section class="card-container">
+      <ul class="cards">
+        {{#each wineCollection}}
+        <li class="card-wine">
+
+          <img src="{{this.image}}" class="card__image" alt="" />
+          <div class="card__overlay">
+            <div class="card__header">
+              <div class="card__header-text">
+                <h3 class="card__title">{{this.name}}</h3>
+                <span class="card__status">{{this.sweetness}}</span>
+                <span class="card__status">${{this.price}} </span>
+              </div>
             </div>
-              <div class="modal-body wine-form ">
-             <div class="wine-form">
-               <form action="/profile/{{this._id}}/edit" method="POST" enctype="multipart/form-data">
+            <p class="card__description">Matches to {{this.matches}}</p>
+            <p class="card__description"> {{this.comment}}</p>
 
-    <div class="group"> 
-    <label class="form-label-image">Your image</label>
-    <input type="file" name="image" id="image-input" accept="image/png, image/jpg" value="{{this.image}}"></input>
-  
-    
-    </div>
-    
-    <div class="group"> 
-    <input class="form-control"  type="text" name="name" value="{{this.name}}" />
-    <span class="highlight"></span>
-    <label class="form-label">Name of wine</label>
-    </div>
+            <div class="buttons">
+              <button type="submit" class="btn btn-primary btn-edit" data-bs-toggle="modal"
+                data-bs-target="#exampleModal{{@index}}"><i class="far fa-edit"></i></button>
+              <form action="/profile/{{this._id}}/delete" method="GET">
+                <button class="btn btn-delete"><i class="far fa-trash-alt"></i></button>
+              </form>
+            </div>
+          </div>
+          <div class="modal fade" id="exampleModal{{@index}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title myModal" id="exampleModalLabel">Edit your wine</h5>
+                  <button type="button" class="btn-close myClose" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body wine-form ">
+                  <div class="wine-form-modal">
+                    <form action="/profile/{{this._id}}/edit" method="POST" enctype="multipart/form-data">
+
+                      <div class="group">
+                     
+                        <input type="file" name="image" id="image-input" accept="image/png, image/jpg"
+                          value="{{this.image}}"></input>
 
 
-    <div class="group">
-    
-    <label id="sweetness-label" class="form-label">Sweetness</label>
-     
-    <select name="sweetness" id="sweetness" value="{{this.sweetness}}">
+                      </div>
 
-      <option value="Dry">Dry</option>
-      <option value="Half dry">Half dry</option>
-      <option value="Medium sweet">Medium sweet</option>
-      <option value="Sweet">Sweet</option>
+                      <div class="group">
+                        <input class="form-control" type="text" name="name" value="{{this.name}}" />
+                        <span class="highlight"></span>
+                        <label class="form-label">Name of wine</label>
+                      </div>
 
-    </select>
-    </div>
-</div>
-    
-    <div class="group"> 
-    <input class="form-control"  type="text" name="price" value="{{this.price}}"/>
-    <span class="highlight"></span>
-    <label class="form-label">Price</label>
-    </div>
 
-    <div class="group"> 
-    <input class="form-control"  type="text" name="matches" value="{{this.matches}}"/>
-    <span class="highlight"></span>
-    <label class="form-label">Matches to</label>
-    </div>
+                      <div class="group">
 
-    <div class="group"> 
-    <input class="form-control"  type="text" name="comment" value="{{this.comment}}"/>
-    <span class="highlight"></span>
-   <label class="form-label">Extra comments</label>
-    </div>
- <div class="modal-footer">
-    
-        <button type="submit" class=" add-btn">Edit</button>
-      </div>
+                        <label id="sweetness-label" class="form-label">Sweetness</label>
 
-</form>
+                        <select name="sweetness" id="sweetness" value="{{this.sweetness}}">
 
-      </div>
-     
-    </div>
+                          <option value="Dry">Dry</option>
+                          <option value="Half dry">Half dry</option>
+                          <option value="Medium sweet">Medium sweet</option>
+                          <option value="Sweet">Sweet</option>
+
+                        </select>
+                      </div>
+                        <div class="group">
+                    <input class="form-control" type="text" name="price" value="{{this.price}}" />
+                    <span class="highlight"></span>
+                    <label class="form-label">Price</label>
+                  </div>
+
+                  <div class="group">
+                    <input class="form-control" type="text" name="matches" value="{{this.matches}}" />
+                    <span class="highlight"></span>
+                    <label class="form-label">Matches to</label>
+                  </div>
+
+                  <div class="group">
+                    <input class="form-control" type="text" name="comment" value="{{this.comment}}" />
+                    <span class="highlight"></span>
+                    <label class="form-label">Extra comments</label>
+                  </div>
+                  </div>
+
+                
+
+                  <div class="modal-footer">
+
+                    <button type="submit" class=" add-btn">Edit</button>
+                  </div>
+
+                  </form>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </li>
+        {{/each}}
+      </ul>
+    </section>
   </div>
-</div>
-
-  </li>
-    {{/each}}
-  </ul>
-</section> 
-</div>
 </body>

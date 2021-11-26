@@ -24,3 +24,10 @@
 .modal-header {
   border-bottom: none;
 }
+
+.wine-form-modal {
+  background: var(--primaryColor);
+  color: var(--secondaryFontColor);
+
+  margin-right: 3rem;
+}

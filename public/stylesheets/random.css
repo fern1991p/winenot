@@ -14,6 +14,7 @@
   margin-left: 20px;
   margin-top: 20px;
 }
+
 .random-container {
   display: flex;
   flex-direction: column;
@@ -27,12 +28,7 @@
   text-align: center;
  
   left: 430px;
-
 }
-
-
-
-
 
 .card__title .random {
   font-size: 1.8rem;
@@ -54,7 +50,19 @@
   background: none;
 }
 
-.centeredCard {
-  margin-top: 30px;
-  left: 450px;
+.random-wine1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.cards-collection1 {
+  display: flex;
+}
+
+.my-card1 {
+  width: 400px;
+  height: 450px;
+  object-fit: contain;
 }
