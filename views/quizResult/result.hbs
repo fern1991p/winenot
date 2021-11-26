@@ -5,12 +5,27 @@ Your perfect wine is:
 
 
 
-  <img src="{{wine.imageUrl}}" />
-  <h3>{{wine.title}}</h3>
-  <span>{{wine.price}}</span>
-  <span>{{wine.description}} </span>
-  <span>{{wine.ratingCount}} </span>
-  <a href="{{wine.link}}">Buy </a>
+    {{#if wine}}
+     
+      <ul class="cards random">
+
+        <li class="card-wine random">
+          <img src="{{wine.imageUrl}}" class="card__image" alt="" />
+          <div class="card__overlay">
+            <div class="card__header">
+              <div class="card__header-text">
+                <h3 class="card__title random">{{wine.title}}</h3>
+                <span class="card__status random">{{wine.price}} </span>
+              </div>
+            </div>
+            <div class="buy-wrapper">
+              <a href="{{wine.link}}" class="card__description random">Buy here </a>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    {{/if}}
 
 
 </h2>

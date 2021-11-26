@@ -262,10 +262,11 @@ QUIZ
     display: none;
   }
  .centered {
-    padding-top: 1px;
+    padding-top: 30px;
     text-align: center;
     letter-spacing: 3px;
     font-size: 25px;   
+    
  }
  .quiz-bg {
     background-image: url("/images/corks.png");

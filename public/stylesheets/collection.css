@@ -21,15 +21,14 @@
   padding-left: 25.5rem;
 }
 
-.card-container {
-  display: flex;
-  flex-direction: row;
-}
-
 .cards .collection {
   background: none;
   font-size: 1.3rem;
   width: 25%;
   height: 100%;
   text-align: center;
+}
+.collection-bg {
+  background-image: url("/images/bg1.png");
+  background-color: #cccccc;
 }
