@@ -1,19 +1,14 @@
-<body class="error-bg"> 
-<div class="error_page">
+<body class="error-bg">
+  <div class="error_page">
 
     <h1 class="error_title centered">
-        <span class="highlightQuiz">Error!</span>
+      <span class="highlightQuiz">Error!</span>
     </h1>
-    <h2 class="centered">There was an error on the server! Check the console!</h2>
-
-</div>
-
-
+    {{#if err}}
+      <h2 class="centered">{{err}}</h2>
+    {{else}}
+      <h2 class="centered">There was an error on the server! Check the console!</h2>
+    {{/if}}
+  </div>
 
 </body>
-
-
-
-
-
-

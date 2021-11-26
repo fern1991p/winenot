@@ -41,7 +41,7 @@ router.post("/profile/:id/edit", uploader.single("image"), (req, res, next) => {
     .then(() => {
       res.redirect("/profile");
     })
-    .catch((err) => console.log("Err while editing a wine: ", err));
+    .catch((err) => next("You forgot to upload a picture"));
 });
 
 router.get("/profile/:id/delete", (req, res, next) => {
