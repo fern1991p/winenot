@@ -38,23 +38,35 @@
   </form>
 </div>
 
-<section class="card-container">
-  <ul class="cards collection">
-    {{#each wines}}
-      <li>
-
+<section class="random-container">
+  <ul class="cards">
+{{#each wines}}
+      {{!-- <li class="card-wine">
         <img src="{{this.imageUrl}}" class="card__image" alt="" />
         <div class="card__overlay">
           <div class="card__header">
             <div class="card__header-text">
               <h3 class="card__title">{{this.title}}</h3>
-
               <span class="card__status">{{this.price}} </span>
             </div>
           </div>
           <a href="{{this.link}}" class="card__description">Buy here</a>
         </div>
-      </li>
+      </li> --}}
+      <li class="card-wine random">
+          <img src="{{this.imageUrl}}" class="card__image" alt="" />
+          <div class="card__overlay">
+            <div class="card__header">
+              <div class="card__header-text">
+                <h3 class="card__title random">{{this.title}}</h3>
+                <span class="card__status random">{{this.price}} </span>
+              </div>
+            </div>
+            <div class="buy-wrapper">
+              <a href="{{this.link}}" class="card__description random">Buy here </a>
+            </div>
+          </div>
+        </li>
     {{/each}}
   </ul>
 </section>
