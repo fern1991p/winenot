@@ -25,6 +25,9 @@
   width: 25%;
   height: 100%;
   text-align: center;
+  margin-top: 30px;
+  left: 430px;
+
 }
 
 .card__title .random {
@@ -45,4 +48,9 @@
 
 .card__description .random {
   background: none;
+}
+
+.centeredCard {
+  margin-top: 30px;
+  left: 450px;
 }
