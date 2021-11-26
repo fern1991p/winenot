@@ -27,10 +27,10 @@
     <button type="submit" class="random button-52 randomcenter">Surprise me</button>
   </form>
 
- <ul class="cards random"></ul>
+ <div class="card-container-random">
     {{#if wine}}
      
-      
+      <ul class="cards random"></ul>
 
         <li class="card-wine random">
           <img src="{{wine.imageUrl}}" class="card__image" alt="" />
@@ -50,6 +50,7 @@
       </ul>
     {{/if}}
 
+  </div>
   </div>
 
 </body>
