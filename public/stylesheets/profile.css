@@ -1,4 +1,4 @@
-.container {
+.container-form-wine-card {
   display: flex;
 }
 /*--------------------------------------------
@@ -6,14 +6,27 @@
  ---------------------------------------------*/
 
 .wine-form {
-  background: var(--primaryColor);
+  background: rgba(14, 13, 14, 0.8);
   color: var(--secondaryFontColor);
-  padding: 0.6rem 2.7rem 0.6rem 2rem;
+  padding: 1rem 0 0.6rem 3rem;
   box-shadow: 0.5rem 1rem 1.2rem rgb(15, 15, 15, 0.6);
+  margin-right: 3rem;
 }
 .add-wine {
   letter-spacing: 0.07rem;
   font-size: 1.2rem;
+}
+
+input[type="file"] {
+  border: none;
+}
+
+.form-label-image {
+  display: inline-block;
+}
+
+#image-input {
+  border: none;
 }
 
 .wine-form .edit {
@@ -43,7 +56,7 @@
 }
 
 .form-control {
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   height: 2rem;
   padding: 1rem 3rem 1rem 0.5rem;
   display: block;
@@ -64,7 +77,7 @@
 
 .form-label {
   color: var(--secondaryFontColor);
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: normal;
   position: absolute;
   pointer-events: none;
@@ -72,16 +85,12 @@
   top: 15px;
 }
 
-.form-label-image {
-  top: -2rem;
-}
-
 /* active state */
 .form-control:focus ~ label,
 .form-control:valid ~ label {
   top: -1rem;
-  font-size: 0.9rem;
-  color: var(--secondaryFontColor);
+  font-size: 1rem;
+
   opacity: 0.9;
 }
 
@@ -95,48 +104,13 @@
   opacity: 0.9;
 }
 
-/* active state */
-.form-control:focus ~ .highlight {
-  -webkit-animation: inputHighlighter 0.3s ease;
-  -moz-animation: inputHighlighter 0.3s ease;
-  animation: inputHighlighter 0.3s ease;
-}
-
-/* ANIMATIONS ================ */
-@-webkit-keyframes inputHighlighter {
-  from {
-    background: #b1b1b1;
-  }
-  to {
-    width: 0;
-    background: transparent;
-  }
-}
-@-moz-keyframes inputHighlighter {
-  from {
-    background: #b1b1b1;
-  }
-  to {
-    width: 0;
-    background: transparent;
-  }
-}
-@keyframes inputHighlighter {
-  from {
-    background: #b1b1b1;
-  }
-  to {
-    width: 0;
-    background: transparent;
-  }
-}
-
 .add-btn {
   background: none;
   border: none;
-
-  margin-left: 12rem;
-  font-size: 1.2rem;
+  padding-bottom: 4rem;
+  padding-right: 2.6rem;
+  margin-left: 7rem;
+  font-size: 1.3rem;
   font-weight: 100;
   letter-spacing: 0.07rem;
   float: right;
@@ -166,7 +140,7 @@
   position: relative;
   display: block;
   height: 100%;
-  width: 40%;
+  width: 30%;
   overflow: hidden;
   text-decoration: none;
   box-shadow: 0.6rem 0.6rem 0 #242223;
@@ -226,13 +200,13 @@
 }
 
 .card__description {
-  padding: 0 1rem;
+  padding: 0.7rem 0.4rem;
   margin: 0;
   color: white;
   -webkit-box-orient: vertical;
   overflow: hidden;
   background-color: rgba(36, 34, 35, 0.8);
-  font-size: 1rem;
+  font-size: 1.1rem;
   text-align: center;
 }
 
