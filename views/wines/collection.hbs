@@ -1,4 +1,5 @@
 <body class="collection-bg">
+<<<<<<< HEAD
   <h1 class="title-collection">
     Wine Collection
   </h1>
@@ -51,6 +52,50 @@
   <section class="card-container">
     <ul class="cards collection">
       {{#each wines}}
+=======
+<h1 class="title-collection">
+  Wine Collection
+</h1>
+
+<div class="landing">
+  <nav role="navigation">
+    <div id="menuToggle">
+
+      <input type="checkbox" />
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+      <ul id="menu">
+
+        <a href="/profile"><li>My collection</li></a>
+        <a href="/quiz"><li>Quiz</li></a>
+        <a href="/collection"><li>Wine collection</li></a>
+        <a href="/random-wine"><li>Surprise me!</li></a>
+        <a href="/logout"><li>Log out</li></a>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div class="filter-wines">
+  <form action="/collection/white" method="POST">
+    <button type="submit" class="singl-wine-btn white-wines"><span class="highlightQuiz">White wines</span></button>
+  </form>
+  <form action="/collection/red" method="POST">
+    <button type="submit" class="singl-wine-btn red-wines"><span class="highlightQuiz">red wines</span></button>
+  </form>
+
+  <form action="/collection" method="POST">
+    <button type="submit" class="singl-wine-btn clear-wines"><span class="highlightQuiz">Clear</span></button>
+  </form>
+</div>
+
+<section class="card-container">
+  <ul class="cards collection">
+    {{#each wines}}
+>>>>>>> 98f2b3e97077596e8e30706eb96f2fac02fb916b
       <li>
 
         <img src="{{this.imageUrl}}" class="card__image" alt="" />
